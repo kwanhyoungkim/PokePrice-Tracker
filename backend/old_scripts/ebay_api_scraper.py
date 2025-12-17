@@ -5,17 +5,18 @@ import re
 import time
 
 class EbayScraper:
-    """eBay 판매 완료 데이터 스크래핑"""
+    """eBay 판매 완료 데이터 웹 스크래핑"""
     
     BASE_URL = "https://www.ebay.com/sch/i.html"
     
     def __init__(self):
         self.headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
             'Accept-Language': 'en-US,en;q=0.9',
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         }
         self.session = requests.Session()
+        print("✅ eBay 웹 스크래퍼 초기화 완료 (설정 불필요)")
     
     def search_sold_cards(self, card_name, max_results=50):
         """판매 완료된 카드 검색
@@ -67,6 +68,8 @@ class EbayScraper:
         if not items:
             # 대체 셀렉터 시도
             items = soup.find_all('li', class_='s-item', limit=max_results)
+        
+        print(f"📦 발견된 아이템: {len(items)}개")
         
         for item in items:
             card_data = self._parse_item(item)
@@ -131,7 +134,6 @@ class EbayScraper:
         """가격 텍스트에서 숫자 추출"""
         try:
             # $25.00, $1,234.56 등의 형태
-            # "to $XX.XX" 형태에서 최고가 추출
             match = re.search(r'[\$]?([\d,]+\.?\d*)', price_text)
             if match:
                 price_str = match.group(1).replace(',', '')
@@ -174,7 +176,7 @@ class EbayScraper:
 # 테스트 코드
 if __name__ == "__main__":
     print("=" * 70)
-    print("eBay 스크래퍼 테스트")
+    print("eBay 웹 스크래퍼 테스트")
     print("=" * 70)
     print("⚠️  실제로 eBay를 스크래핑합니다. (10-15초 소요)")
     print("=" * 70 + "\n")
@@ -194,17 +196,20 @@ if __name__ == "__main__":
         
         print("[ 상위 5개 결과 ]\n")
         for idx, card in enumerate(results[:5], 1):
-            print(f"{idx}. {card['title']}")
+            print(f"{idx}. {card['title'][:60]}...")
             print(f"   💰 가격: ${card['price']:.2f}")
             print(f"   📊 상태: {card['condition']}")
-            print(f"   🖼️  이미지: {card['image_url'][:50] if card['image_url'] else 'N/A'}...")
-            print(f"   🔗 URL: {card['url'][:50] if card['url'] else 'N/A'}...")
+            if card['image_url']:
+                print(f"   🖼️  이미지: {card['image_url'][:50]}...")
+            if card['url']:
+                print(f"   🔗 URL: {card['url'][:50]}...")
             print()
         
         # 가격 통계
         prices = [card['price'] for card in results]
         print(f"{'='*70}")
         print("[ 가격 통계 ]")
+        print(f"  개수: {len(prices)}개")
         print(f"  평균: ${sum(prices)/len(prices):.2f}")
         print(f"  최저: ${min(prices):.2f}")
         print(f"  최고: ${max(prices):.2f}")
@@ -212,9 +217,9 @@ if __name__ == "__main__":
         
     else:
         print("❌ 검색 결과가 없습니다.")
-        print("가능한 원인:")
+        print("\n가능한 원인:")
         print("  1. 네트워크 연결 문제")
-        print("  2. eBay 접근 제한")
+        print("  2. eBay 페이지 구조 변경")
         print("  3. 검색어 오류")
     
     print("\n" + "=" * 70)
