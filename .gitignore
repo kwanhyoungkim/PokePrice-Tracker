@@ -8,3 +8,5 @@ __pycache__/
 .idea/
 .vscode/
 *.log
+*.html
+.old_scripts/
