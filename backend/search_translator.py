@@ -22,8 +22,8 @@ app.add_middleware(
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data") 
 
-EBAY_CLIENT_ID = "-checkpok-PRD-2e06b92ff-8869a355" # 실제 Production App ID
-EBAY_CLIENT_SECRET = "PRD-e06b92ffdeeb-28e5-4a7e-a878-1583" # 실제 Production Cert ID
+EBAY_CLIENT_ID = os.getenv("EBAY_CLIENT_ID") # 실제 Production App ID
+EBAY_CLIENT_SECRET = os.getenv("EBAY_CLIENT_SECRET") # 실제 Production Cert ID
 
 EBAY_TOKEN_URL = "https://api.ebay.com/identity/v1/oauth2/token"
 EBAY_SEARCH_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search"
