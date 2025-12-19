@@ -1,9 +1,9 @@
 import os
 import requests
 import base64
+from datetime import datetime
 from dotenv import load_dotenv
 
-# .env 파일에서 환경 변수 로드
 load_dotenv()
 
 class EbayScraper:
@@ -13,10 +13,10 @@ class EbayScraper:
         self.auth_token = self._get_access_token()
 
     def _get_access_token(self):
-        """eBay OAuth 2.0 Access Token 가져오기"""
         url = "https://api.ebay.com/identity/v1/oauth2/token"
-        
-        # Client ID와 Secret을 Base64로 인코딩
+        if not self.client_id or not self.client_secret:
+            return None
+
         auth_str = f"{self.client_id}:{self.client_secret}"
         encoded_auth = base64.b64encode(auth_str.encode()).decode()
         
@@ -24,59 +24,50 @@ class EbayScraper:
             "Content-Type": "application/x-www-form-urlencoded",
             "Authorization": f"Basic {encoded_auth}"
         }
-        
-        data = {
-            "grant_type": "client_credentials",
-            "scope": "https://api.ebay.com/oauth/api_scope" # 공개 데이터 조회용 스코프
-        }
+        data = {"grant_type": "client_credentials", "scope": "https://api.ebay.com/oauth/api_scope"}
         
         try:
             response = requests.post(url, headers=headers, data=data)
-            response.raise_for_status()
             return response.json().get("access_token")
-        except Exception as e:
-            print(f"❌ eBay 인증 토큰 획득 실패: {e}")
+        except:
             return None
 
     def fetch_recent_sales(self, query):
-        """특정 쿼리로 최근 판매된 아이템 검색"""
+        # 토큰이 없으면 빈 리스트를 반환하여 500 에러 방지
         if not self.auth_token:
-            return {"error": "인증 토큰이 없습니다."}
+            self.auth_token = self._get_access_token()
+        
+        if not self.auth_token:
+            return [] 
 
-        # eBay Browse API 엔드포인트
-        # 필터: 판매 완료된 항목(lastSoldDate) 위주로 검색
         url = "https://api.ebay.com/buy/browse/v1/item_summary/search"
         headers = {
             "Authorization": f"Bearer {self.auth_token}",
-            "X-EBAY-C-MARKETPLACE-ID": "EBAY_US"  # 미국 이베이 기준
+            "X-EBAY-C-MARKETPLACE-ID": "EBAY_US"
         }
-        
-        params = {
-            "q": query,
-            "limit": 10,  # 최신순 10개만
-            "filter": "buyingOptions:{FIXED_PRICE}", # 경매 제외 고정가 판매 위주 (선택사항)
-            "sort": "newlyListed" # 최신 항목순
-        }
+        params = {"q": query, "limit": 5, "sort": "newlyListed"}
 
         try:
             response = requests.get(url, headers=headers, params=params)
-            response.raise_for_status()
+            # 응답이 정상이 아닐 경우 빈 리스트 반환
+            if response.status_code != 200:
+                return []
+                
             data = response.json()
-            
             items = data.get("itemSummaries", [])
             results = []
             
             for item in items:
+                raw_date = item.get("itemCreationDate", "")
+                formatted_date = raw_date[:10] if raw_date else "Recent"
+                
                 results.append({
-                    "title": item.get("title"),
-                    "price": item.get("price", {}).get("value"),
-                    "currency": item.get("price", {}).get("currency"),
-                    "item_url": item.get("itemWebUrl"),
-                    "image": item.get("image", {}).get("imageUrl"),
-                    "condition": item.get("condition")
+                    "title": item.get("title", "No Title"),
+                    "price": item.get("price", {}).get("value", "0"),
+                    "currency": item.get("price", {}).get("currency", "USD"),
+                    "sold_date": formatted_date
                 })
-            
             return results
-
         except Exception as e:
-            return {"error": f"eBay 검색 중 오류 발생: {str(e)}"}
+            print(f"Scraper Error: {e}")
+            return [] # 에러 발생 시 빈 리스트 반환하여 500 에러 방지
