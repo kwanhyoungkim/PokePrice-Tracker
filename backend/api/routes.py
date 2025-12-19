@@ -1,20 +1,6 @@
-# from flask import Blueprint, request, jsonify
-# from backend.service.search import search_card_prices
-
-# bp = Blueprint("api", __name__)
-
-# @bp.route("/price", methods=["GET"])
-# def get_price():
-#     card_name = request.args.get("name")
-
-#     if not card_name:
-#         return jsonify({"error": "name parameter is required"}), 400
-
-#     results = search_card_prices(card_name)
-#     return jsonify(results)
 from flask import Blueprint, request, jsonify
-from backend.service.search import search_card_prices
-from requests.exceptions import RequestException # ⭐ RequestException을 추가로 import
+from backend.service.search_service import search_card_prices
+from requests.exceptions import RequestException
 
 bp = Blueprint("api", __name__)
 
