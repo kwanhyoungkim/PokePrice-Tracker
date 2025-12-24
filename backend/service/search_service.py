@@ -75,10 +75,31 @@ class SearchService:
         return matches
 
     def get_ebay_prices(self, name, series, number):
-        """이베이 검색어 최적화"""
-        # 이름에서 특수문자를 제거하여 검색 성공률을 높임
-        clean_name = name.split('&')[0].split('-')[0].strip()
-        query = f"{clean_name} {number} pokemon card"
+        try:
+            if not name: return []
+            
+            # 1. 이름 정제 (특수문자 제거)
+            clean_name = name.split('(')[0].split("'")[0].strip()
         
-        print(f"DEBUG: 이베이 크롤링 시작 -> {query}")
-        return self.scraper.fetch_recent_sales(query)
+        # 2. 번호 정제 (002/015 -> 2/15 로도 검색될 수 있게 함)
+        # 하지만 일단 DB에 있는 번호를 그대로 쓰되, "pokemon card" 키워드를 조합
+        
+        # [전략] 검색어에서 시리즈를 제외하고 '이름 + 번호'로만 먼저 검색
+            query = f"{clean_name} {number} pokemon"
+        
+            print(f"DEBUG: [이베이 검색 시도] 쿼리: {query}")
+        
+            if self.scraper:
+                prices = self.scraper.fetch_recent_sales(query)
+            
+            # 결과가 0건이면 'pokemon' 글자를 빼고 재시도
+                if not prices or len(prices) == 0:
+                    print("DEBUG: 결과 0건. 검색어 단순화하여 재시도...")
+                    query_simple = f"{clean_name} {number}"
+                    prices = self.scraper.fetch_recent_sales(query_simple)
+                
+                return prices if prices else []
+            return []
+        except Exception as e:
+            print(f"❌ search_service 에러: {e}")
+            return []
