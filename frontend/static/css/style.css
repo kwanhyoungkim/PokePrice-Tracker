@@ -13,7 +13,7 @@ body {
 }
 
 .app-container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 40px auto;
     padding: 20px;
 }
@@ -69,8 +69,8 @@ header h1 {
 /* 카드 리스트 그리드 */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
     margin-top: 20px;
 }
 
@@ -81,6 +81,7 @@ header h1 {
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
 }
 
 .card-item:hover {
@@ -88,9 +89,47 @@ header h1 {
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
+/* 카드 이미지 스타일 */
+.card-image-container {
+    width: 100%;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.card-item:hover .card-image {
+    transform: scale(1.05);
+}
+
+.card-image-placeholder {
+    width: 80px;
+    height: 80px;
+    background: #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 2rem;
+}
+
 .card-item h4 {
     margin-bottom: 8px;
     font-size: 1.1rem;
+    color: #2f3542;
 }
 
 .card-item p {
@@ -99,14 +138,37 @@ header h1 {
     margin-bottom: 15px;
 }
 
+.card-info {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.card-set {
+    color: #747d8c;
+    font-size: 0.85rem;
+}
+
+.card-number {
+    color: #2f3542;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
 .view-price-btn {
     background-color: #3b4cca;
     color: white;
     border: none;
-    padding: 8px 15px;
+    padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.view-price-btn:hover {
+    background-color: #2d3a8c;
 }
 
 /* 시세 테이블 */
@@ -136,10 +198,25 @@ td {
     border-bottom: 1px solid #eee;
 }
 
-.hidden { display: none; }
+.hidden { 
+    display: none; 
+}
 
 #loading {
     text-align: center;
     padding: 20px;
     color: #3b4cca;
+    font-weight: 600;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 16px;
+    }
+    
+    .card-image-container {
+        height: 220px;
+    }
 }
