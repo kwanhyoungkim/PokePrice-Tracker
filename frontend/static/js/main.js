@@ -1,4 +1,3 @@
-cat > static/js/main.js << 'EOF'
 // 1. 카드 리스트 검색 함수
 async function searchCards() {
     const input = document.getElementById('searchInput');
@@ -122,4 +121,3 @@ async function getPrices(name, series, number) {
         tableBody.innerHTML = '<tr><td colspan="3" style="text-align:center; color:red; padding: 20px;">❌ 서버 통신 중 오류가 발생했습니다.</td></tr>';
     }
 }
-EOF
