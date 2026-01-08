@@ -90,3 +90,4 @@ class LocalDataImporter:
 if __name__ == "__main__":
     importer = LocalDataImporter()
     importer.import_all()
+    
