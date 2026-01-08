@@ -1,3 +1,4 @@
+cat > static/js/main.js << 'EOF'
 // 1. 카드 리스트 검색 함수
 async function searchCards() {
     const input = document.getElementById('searchInput');
@@ -13,7 +14,7 @@ async function searchCards() {
     const priceSection = document.getElementById('priceResultSection');
     
     // 초기화 및 로딩 표시
-    cardList.innerHTML = '<p style="text-align:center; width:100%;">데이터를 찾는 중입니다...</p>';
+    cardList.innerHTML = '<p style="text-align:center; width:100%; padding: 40px;">🔍 데이터를 찾는 중입니다...</p>';
     cardListSection.classList.remove('hidden');
     priceSection.classList.add('hidden'); 
 
@@ -26,32 +27,48 @@ async function searchCards() {
         cardList.innerHTML = '';
 
         if (!cards || cards.length === 0) {
-            cardList.innerHTML = '<p style="text-align:center; width:100%;">해당하는 카드가 DB에 없습니다.</p>';
+            cardList.innerHTML = '<p style="text-align:center; width:100%; padding: 40px;">해당하는 카드가 DB에 없습니다.</p>';
             return;
         }
 
         // 결과 카드 렌더링
         cards.forEach(card => {
-            // [핵심 수정] 이름이나 시리즈 명에 작은따옴표(')가 있을 경우 JS 에러 방지를 위해 이스케이프 처리
-            // 예: Mewtwo's -> Mewtwo\'s
+            // 작은따옴표(') 이스케이프 처리
             const escapedName = card.name.replace(/'/g, "\\'");
             const escapedSeries = card.series.replace(/'/g, "\\'");
             
             const cardDiv = document.createElement('div');
             cardDiv.className = 'card-item';
+            
+            // 이미지 HTML 생성
+            const imageHTML = card.image_url 
+                ? `<div class="card-image-container">
+                     <img src="${card.image_url}" 
+                          alt="${card.name}" 
+                          class="card-image"
+                          onerror="this.parentElement.innerHTML='<div class=\\'card-image-placeholder\\'>🎴</div>'">
+                   </div>`
+                : `<div class="card-image-container">
+                     <div class="card-image-placeholder">🎴</div>
+                   </div>`;
+            
             cardDiv.innerHTML = `
+                ${imageHTML}
                 <h4>${card.name}</h4>
-                <p>${card.series}<br><b>#${card.number}</b></p>
+                <div class="card-info">
+                    <p class="card-set">${card.series}</p>
+                    <p class="card-number">#${card.number}</p>
+                </div>
                 <button class="view-price-btn" 
                         onclick="getPrices('${escapedName}', '${escapedSeries}', '${card.number}')">
-                    실시간 시세 보기
+                    💰 실시간 시세 보기
                 </button>
             `;
             cardList.appendChild(cardDiv);
         });
     } catch (error) {
         console.error("검색 에러:", error);
-        cardList.innerHTML = '<p>서버와 연결할 수 없습니다. 잠시 후 다시 시도해주세요.</p>';
+        cardList.innerHTML = '<p style="text-align:center; width:100%; padding: 40px; color: #e74c3c;">❌ 서버와 연결할 수 없습니다. 잠시 후 다시 시도해주세요.</p>';
     }
 }
 
@@ -102,6 +119,7 @@ async function getPrices(name, series, number) {
     } catch (error) {
         console.error("시세조회 에러:", error);
         loading.classList.add('hidden');
-        tableBody.innerHTML = '<tr><td colspan="3" style="text-align:center; color:red; padding: 20px;">서버 통신 중 오류가 발생했습니다.</td></tr>';
+        tableBody.innerHTML = '<tr><td colspan="3" style="text-align:center; color:red; padding: 20px;">❌ 서버 통신 중 오류가 발생했습니다.</td></tr>';
     }
 }
+EOF

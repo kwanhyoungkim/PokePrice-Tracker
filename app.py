@@ -1,52 +1,92 @@
-import os
 from flask import Flask, render_template, request, jsonify
-from backend.service.search_service import SearchService
-from backend.scraper.ebay_scraper import EbayScraper
+import requests
+import os
+import json  # JSON 파일을 읽기 위해 추가
+from dotenv import load_dotenv
 
-app = Flask(__name__, template_folder='frontend/templates', static_folder='frontend/static')
+load_dotenv()
 
-# 1. 경로 설정
 base_dir = os.path.dirname(os.path.abspath(__file__))
-db_path = os.path.join(base_dir, "backend/data/pokemon_cards.db")
 
-# 2. 객체 초기화
-# EbayScraper는 .env에서 API 키를 읽어 토큰을 생성합니다.
-scraper = EbayScraper()
-service = SearchService(db_path, scraper)
+app = Flask(
+    __name__,
+    static_folder=os.path.join(base_dir, 'frontend', 'static'),
+    template_folder=os.path.join(base_dir, 'frontend', 'templates')
+)
+
+POKEMON_TCG_API_KEY = os.getenv('POKEMON_TCG_API_KEY')
+POKEMON_TCG_BASE_URL = 'https://api.pokemontcg.io/v2'
+
+# --- [추가] JSON 파일을 읽어와서 매핑 사전 만들기 ---
+def load_pokemon_names():
+    json_path = os.path.join(base_dir,'backend', 'data', 'pokemon_names.json')
+    try:
+        with open(json_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            # {'한글이름': '영어이름'} 형태의 딕셔너리로 변환
+            return {item['korean_name']: item['english_name'] for item in data}
+    except Exception as e:
+        print(f"❌ JSON 로드 실패: {e}")
+        return {}
+
+POKEMON_NAME_MAP = load_pokemon_names()
+print(f"✅ 포켓몬 이름 {len(POKEMON_NAME_MAP)}개 로드 완료")
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/api/search', methods=['GET'])
+@app.route('/api/search')
 def search_cards():
-    query = request.args.get('name', '')
-    if not query:
-        return jsonify([])
-    try:
-        results = service.search_card_list(query)
-        return jsonify(results)
-    except Exception as e:
-        print(f"Error in /api/search: {e}")
-        return jsonify([]), 500
+    name_input = request.args.get('name', '').strip()
+    if not name_input:
+        return jsonify({'error': '검색어를 입력해주세요'}), 400
 
-@app.route('/api/price', methods=['POST'])
-def get_price():
+    # JSON 매핑 사용
+    search_name = POKEMON_NAME_MAP.get(name_input, name_input)
+    print(f"[DEBUG] 입력: {name_input} -> 변환: {search_name}")
+
     try:
-        data = request.json
-        if not data:
-            return jsonify([])
-            
-        # 이베이 시세 조회 (SearchService에서 쿼리 최적화 수행)
-        prices = service.get_ebay_prices(
-            data.get('name'), 
-            data.get('series'), 
-            data.get('number')
+        headers = {'X-Api-Key': POKEMON_TCG_API_KEY} if POKEMON_TCG_API_KEY else {}
+        params = {'q': f'name:"{search_name}*"', 'pageSize': 20}
+
+        response = requests.get(
+            f'{POKEMON_TCG_BASE_URL}/cards',
+            headers=headers,
+            params=params,
+            timeout=20
         )
-        return jsonify(prices if prices else [])
+
+        if response.status_code != 200:
+            print(f"[ERROR] API 응답 코드: {response.status_code}")
+            return jsonify({'error': 'API 호출 실패'}), 500
+
+        data = response.json()
+        cards = data.get('data', [])
+        
+        result = []
+        for card in cards:
+            # .get()을 사용하여 데이터가 없더라도 500 에러가 나지 않게 방어
+            images = card.get('images', {})
+            card_set = card.get('set', {})
+            
+            result.append({
+                'id': card.get('id'),
+                'name': card.get('name'),
+                'series': card_set.get('name', 'Unknown'), # 세트 이름 안전하게 가져오기
+                'number': card.get('number', '?'),
+                'image_url': images.get('small', ''),
+                'image_url_large': images.get('large', ''),
+                'rarity': card.get('rarity', 'N/A'),
+                'tcg_id': card.get('id') # id와 동일하게 설정
+            })
+        
+        return jsonify(result)
+
     except Exception as e:
-        print(f"Error in /api/price: {e}")
-        return jsonify([]), 200 # 프론트 엔드 오류 방지를 위해 200으로 전송
+        # 터미널에 정확히 어떤 줄에서 어떤 에러가 났는지 출력합니다.
+        print(f"[ERROR] 검색 중 상세 오류: {str(e)}") 
+        return jsonify({'error': f'서버 오류: {str(e)}'}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=True, host='0.0.0.0', port=5001)
