@@ -16,40 +16,34 @@ app = Flask(
 )
 
 # 경로 설정
-DB_PATH = os.path.join(base_dir, 'backend', 'data', 'pokemon_cards.db')
-SETS_EN_PATH = os.path.join(base_dir, 'sets', 'en.json')
 JSON_PATH = os.path.join(base_dir, 'backend', 'data', 'pokemon_names.json')
+JSON_JP_PATH = os.path.join(base_dir, 'backend', 'data', 'all_cards_jp.json')
+JSON_EN_PATH = os.path.join(base_dir, 'backend', 'data', 'all_cards_en.json')
 
 # DB 및 스크래퍼 로직 인스턴스
 price_app = PokemonPriceApp()
 
-TCGDEX_BASE_URL = 'https://api.tcgdex.net/v2'
-
-# [변경 포인트 1] JSON 파일을 읽어 한글/영어/일본어 통합 맵 생성
-def load_pokemon_names_comprehensive():
-    if not os.path.exists(JSON_PATH):
-        print(f"⚠️  경고: {JSON_PATH} 파일을 찾을 수 없습니다.")
-        return {}
+def load_json_file(file_path):
+    if not os.path.exists(file_path):
+        print(f"⚠️  경고: {file_path} 없음")
+        return []
     try:
-        with open(JSON_PATH, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-            # 한글 이름을 키로 사용하고 영어와 일본어 이름을 값으로 가짐
-            return {
-                item['korean_name']: {
-                    "en": item['english_name'],
-                    "ja": item['japanese_name']
-                } for item in data
-            }
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
     except Exception as e:
-        print(f"❌ JSON 로드 에러: {e}")
-        return {}
+        print(f"❌ 로드 에러: {e}")
+        return []
 
-# 전역 변수에 이름 매핑 저장
-POKEMON_MASTER_MAP = load_pokemon_names_comprehensive()
+# 데이터 사전 로드 (검색 속도 향상)
+POKEMON_MASTER_MAP = {item['korean_name']: item for item in load_json_file(JSON_PATH)}
+CARDS_JP_LOCAL = load_json_file(JSON_JP_PATH)
+CARDS_EN_LOCAL = load_json_file(JSON_EN_PATH)
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
+
 
 @app.route('/api/search')
 def search_cards():
@@ -60,65 +54,64 @@ def search_cards():
     if not name_input:
         return jsonify([])
 
-    # [변경 포인트 2] 마스터 맵에서 다국어 이름 추출
-    # 입력값이 한글이 아닐 경우(영문 입력 등)를 대비해 기본값 설정
+    # 1. 한글 -> 타겟 언어로 변환 (기라티나 -> Giratina / ギラティナ)
     name_info = POKEMON_MASTER_MAP.get(name_input)
-    
     if name_info:
-        english_name = name_info['en']
-        japanese_name = name_info['ja']
+        search_query = name_info.get('japanese_name' if target_lang == 'ja' else 'english_name')
     else:
-        # 맵에 없을 경우 입력값 그대로 사용
-        english_name = name_input
-        japanese_name = name_input
+        # 매핑 정보가 없으면 입력값 그대로 사용
+        search_query = name_input
 
-    # 타겟 언어에 맞춰 검색 쿼리 결정
-    api_query = japanese_name if target_lang == 'ja' else english_name
+    print(f"🔍 [검색] 입력: {name_input} -> 쿼리: {search_query} ({target_lang})")
+
+    final_results = {} # card_id를 키로 사용하여 중복 제거
+
+    # 2. 로컬 JSON 데이터 우선 검색 (기라티나 등 파일에 있는 데이터 확보)
+    local_source = CARDS_JP_LOCAL if target_lang == 'ja' else CARDS_EN_LOCAL
     
-    print(f"🔍 [서버 로그] 수신: {raw_lang} | 타겟: {target_lang} | 검색어: {api_query}")
+    for c in local_source:
+        card_name = c.get('name', '').lower()
+        if search_query.lower() in card_name:
+            c_id = c.get('id')
+            final_results[c_id] = {
+                'id': c_id,
+                'name': c.get('name'),
+                'series': c.get('series', 'Unknown'),
+                'series_id': c.get('series_id'),
+                'number': c.get('number', '?'),
+                'image_url': c.get('image'),
+                'language': target_lang
+            }
 
+    # 3. TCGdex API 호출로 데이터 보강 (로컬에 없는 최신 카드 등)
     try:
-        url = f"{TCGDEX_BASE_URL}/{target_lang}/cards"
-        params = {'name': api_query}
-        response = requests.get(url, params=params, timeout=15)
+        url = f"https://api.tcgdex.net/v2/{target_lang}/cards"
+        params = {'name': search_query}
+        response = requests.get(url, params=params, timeout=8)
         
-        cards = []
         if response.status_code == 200:
-            cards = response.json()
-
-        # [보정 로직] 일본어 이름으로 검색 실패 시 영문 이름으로 재시도
-        if not cards and target_lang == 'ja' and japanese_name != english_name:
-            print(f"⚠️  일본어 검색 실패. 영문명({english_name})으로 재시도...")
-            params = {'name': english_name}
-            response = requests.get(url, params=params, timeout=15)
-            if response.status_code == 200:
-                cards = response.json()
-
-        if not cards:
-            return jsonify([])
-
-        result = []
-        for card in cards[:40]:
-            card_set = card.get('set', {})
-            image_url = ""
-            if card.get('image'):
-                image_url = f"{card.get('image')}/low.jpg"
-                if target_lang == 'ja':
-                    image_url = image_url.replace('/en/', '/ja/')
-
-            result.append({
-                'id': card.get('id'),
-                'name': card.get('name'),
-                'series': card_set.get('name', 'Unknown'),
-                'series_id': card_set.get('id', '').upper(),
-                'number': card.get('localId', '?'),
-                'image_url': image_url,
-                'language': target_lang 
-            })
-        return jsonify(result)
+            api_cards = response.json()
+            for card in api_cards:
+                card_id = card.get('id')
+                # API 데이터로 정보 업데이트 (이미지 경로 등) 또는 신규 추가
+                card_set = card.get('set', {})
+                img_base = card.get('image')
+                
+                # 로컬에 이미 있더라도 API 데이터의 이미지가 더 정확할 수 있으므로 갱신
+                final_results[card_id] = {
+                    'id': card_id,
+                    'name': card.get('name'),
+                    'series': card_set.get('name', final_results.get(card_id, {}).get('series', 'Unknown')),
+                    'series_id': card_set.get('id', final_results.get(card_id, {}).get('series_id')),
+                    'number': card.get('localId', final_results.get(card_id, {}).get('number', '?')),
+                    'image_url': f"{img_base}/low.jpg" if img_base else final_results.get(card_id, {}).get('image_url', ''),
+                    'language': target_lang
+                }
     except Exception as e:
-        print(f"❌ 오류: {e}")
-        return jsonify([])
+        print(f"❌ API 호출 실패 (로컬 데이터로 대체): {e}")
+
+    # 리스트로 변환 및 반환
+    return jsonify(list(final_results.values()))
 
 @app.route('/api/price', methods=['POST'])
 def get_prices():
@@ -129,23 +122,21 @@ def get_prices():
     lang = data.get('lang', 'en').lower()
 
     try:
-        # 이베이 검색어 생성
-        if lang == 'ja':
-            ebay_query = f"Japanese {series_id} {name} {number} Pokemon Card"
-        else:
-            ebay_query = f"{name} {number} {series_id} Pokemon Card"
-
-        print(f"🌐 [eBay 쿼리] 언어: {lang} | 최종 검색어: {ebay_query}")
+        # eBay 검색어 최적화 (일본판의 경우 'Japanese' 명시)
+        prefix = "Japanese " if lang == 'ja' else ""
+        ebay_query = f"{prefix} {series_id} {name} {number} Pokemon Card"
         
+        print(f"🌐 [eBay 쿼리] {ebay_query}")
         prices = price_app.scraper.fetch_recent_sales(ebay_query)
         
-        if (not prices or len(prices) < 2) and lang == 'ja':
-            ebay_query_alt = f"Japanese {series_id} {name} card"
-            prices = price_app.scraper.fetch_recent_sales(ebay_query_alt)
+        # 결과가 적을 경우 세부 번호 제외하고 재검색
+        if not prices or len(prices) < 2:
+            alt_query = f"{prefix}{name} {series_id} card"
+            prices = price_app.scraper.fetch_recent_sales(alt_query)
 
         return jsonify(prices if prices else [])
     except Exception as e:
-        print(f"❌ 시세 조회 오류: {e}")
+        print(f"❌ 가격 조회 오류: {e}")
         return jsonify([]), 500
 
 if __name__ == '__main__':
