@@ -62,7 +62,7 @@ def fetch_pokemon_names(max_pokemon=1025):
                 "number": number,
                 "korean_name": korean_name,
                 "english_name": english_name,
-                "japanese_name": japanese_name  # <-- 추가됨
+                "japanese_name": japanese_name 
             })
             
             time.sleep(0.1)
@@ -75,8 +75,6 @@ def fetch_pokemon_names(max_pokemon=1025):
             break
     
     return pokemon_data
-
-# save_to_json 함수와 메인 실행부는 기존과 거의 동일하지만 샘플 출력만 수정했습니다.
 
 def save_to_json(data, filename):
     os.makedirs(os.path.dirname(filename), exist_ok=True)

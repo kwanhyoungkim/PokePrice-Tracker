@@ -16,9 +16,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ----------------------------------------------------------------
 # 1. 설정 (Production 키를 여기에 입력하세요)
-# ----------------------------------------------------------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data") 
 
@@ -37,9 +35,7 @@ def load_json(filename):
 
 pokemon_data = load_json("pokemon_names.json")
 
-# ----------------------------------------------------------------
 # 2. 토큰 발급 (Production)
-# ----------------------------------------------------------------
 def get_production_token():
     auth_str = f"{EBAY_CLIENT_ID}:{EBAY_CLIENT_SECRET}"
     encoded_auth = base64.b64encode(auth_str.encode()).decode()
@@ -58,9 +54,7 @@ def get_production_token():
         return response.json().get("access_token")
     return None
 
-# ----------------------------------------------------------------
 # 3. API 엔드포인트
-# ----------------------------------------------------------------
 class SearchRequest(BaseModel):
     lang: str
     pokemon_name: str

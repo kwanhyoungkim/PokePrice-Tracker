@@ -19,7 +19,6 @@ def fix_card_series_info():
         series_info_list = json.load(f)
 
     # 2. 빠른 검색을 위해 시리즈 정보를 사전(Dict)으로 변환 (Key: set_id)
-    # 
     series_map = {item['set_id']: item for item in series_info_list}
 
     fixed_count = 0
@@ -37,9 +36,7 @@ def fix_card_series_info():
                 
                 # 데이터 업데이트
                 card['series'] = target_info.get('set_name_us') # 세트명 (Base Set 등)
-                card['series_id'] = set_id_part                # 세트 ID (base1 등)
-                # 필요하다면 상위 시리즈명(series_name_us)을 추가 필드로 넣을 수도 있습니다.
-                
+                card['series_id'] = set_id_part                # 세트 ID (base1 등)                
                 fixed_count += 1
 
     # 4. 결과 저장

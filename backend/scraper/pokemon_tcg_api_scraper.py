@@ -4,9 +4,7 @@ import os
 import time
 from typing import Dict, List, Any
 
-# =========================================================================
 # 1. 설정 및 경로
-# =========================================================================
 BASE_URL = "https://api.pokemontcg.io/v2"
 
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -25,9 +23,7 @@ TRANSLATION_MAPS = {
     "pokemon": {}, "series_kr": {}, "series_jp": {}, "series_en": {}
 }
 
-# =========================================================================
 # 2. 유틸리티 함수
-# =========================================================================
 
 def load_all_translations():
     print("="*70)
@@ -76,9 +72,8 @@ def get_series_translated(eng_series: str, lang_key: str) -> str:
         return s_data.get(eng_series, eng_series)
     return eng_series
 
-# =========================================================================
+
 # 3. 메인 스크래핑 로직
-# =========================================================================
 
 def fetch_all_cards():
     load_all_translations()

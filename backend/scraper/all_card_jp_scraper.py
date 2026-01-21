@@ -31,7 +31,6 @@ def fetch_all_japanese_cards():
     all_details = []
     
     # 2. 개별 카드 상세 정보 수집
-    # API 부하를 줄이기 위해 0.05초의 대기 시간을 둡니다.
     for idx, card in enumerate(summary_list, start=1):
         card_id = card['id']
         
@@ -40,7 +39,7 @@ def fetch_all_japanese_cards():
             if detail_res.status_code == 200:
                 data = detail_res.json()
                 
-                # 필요한 정보만 정제해서 저장 (메모리 절약)
+                # 필요한 정보만 정제해서 저장
                 card_entry = {
                     "id": data.get("id"),
                     "name": data.get("name"),

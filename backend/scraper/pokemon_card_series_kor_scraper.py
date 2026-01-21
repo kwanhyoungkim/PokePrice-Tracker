@@ -58,16 +58,13 @@ def run_playwright_scraping(url, selector_to_wait, callback_func):
         print(f"\n[오류] Playwright 실행 중 예상치 못한 오류 발생: {e}")
         return None
 
-# =========================================================================
 # 데이터 추출 로직 (발매일 항목 제외)
-# =========================================================================
 
 def extract_series_info(content):
     """series/info1 페이지에서 시리즈 이름과 썸네일만 추출합니다."""
     soup = BeautifulSoup(content, 'html.parser')
     series_data = []
 
-    # 성공적으로 작동했던 목록 아이템 셀렉터
     series_items = soup.select('#pinBoot1 > article') 
     
     for item in series_items: 
@@ -79,8 +76,6 @@ def extract_series_info(content):
         # 2. 썸네일 URL 추출
         img_tag = item.select_one('img') 
         img_url = img_tag.get('src') if img_tag else "URL 없음"
-        
-        # ⭐ 데이터에 발매일 항목을 추가하지 않습니다. ⭐
         series_data.append({
             "series_name": title,
             "thumbnail_url": img_url,
@@ -89,9 +84,7 @@ def extract_series_info(content):
     return series_data
 
 
-# =========================================================================
 # 메인 실행 및 저장
-# =========================================================================
 
 if __name__ == "__main__":
     
