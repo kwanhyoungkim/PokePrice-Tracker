@@ -54,63 +54,83 @@ def search_cards():
     if not name_input:
         return jsonify([])
 
-    # 1. 한글 -> 타겟 언어로 변환 (기라티나 -> Giratina / ギラティナ)
+    # 1. 이름 정보 확보
     name_info = POKEMON_MASTER_MAP.get(name_input)
-    if name_info:
-        search_query = name_info.get('japanese_name' if target_lang == 'ja' else 'english_name')
-    else:
-        # 매핑 정보가 없으면 입력값 그대로 사용
-        search_query = name_input
+    eng_name = name_info.get('english_name', '').lower() if name_info else name_input.lower()
+    jp_name = name_info.get('japanese_name', '') if name_info else ""
 
-    print(f"🔍 [검색] 입력: {name_input} -> 쿼리: {search_query} ({target_lang})")
+    final_results = {}
 
-    final_results = {} # card_id를 키로 사용하여 중복 제거
-
-    # 2. 로컬 JSON 데이터 우선 검색 (기라티나 등 파일에 있는 데이터 확보)
+    # 2. 로컬 데이터 검색 (강화된 매칭)
     local_source = CARDS_JP_LOCAL if target_lang == 'ja' else CARDS_EN_LOCAL
-    
     for c in local_source:
-        card_name = c.get('name', '').lower()
-        if search_query.lower() in card_name:
-            c_id = c.get('id')
-            final_results[c_id] = {
-                'id': c_id,
-                'name': c.get('name'),
-                'series': c.get('series', 'Unknown'),
-                'series_id': c.get('series_id'),
-                'number': c.get('number', '?'),
-                'image_url': c.get('image'),
-                'language': target_lang
-            }
-
-    # 3. TCGdex API 호출로 데이터 보강 (로컬에 없는 최신 카드 등)
-    try:
-        url = f"https://api.tcgdex.net/v2/{target_lang}/cards"
-        params = {'name': search_query}
-        response = requests.get(url, params=params, timeout=8)
-        
-        if response.status_code == 200:
-            api_cards = response.json()
-            for card in api_cards:
-                card_id = card.get('id')
-                # API 데이터로 정보 업데이트 (이미지 경로 등) 또는 신규 추가
-                card_set = card.get('set', {})
-                img_base = card.get('image')
-                
-                # 로컬에 이미 있더라도 API 데이터의 이미지가 더 정확할 수 있으므로 갱신
-                final_results[card_id] = {
-                    'id': card_id,
-                    'name': card.get('name'),
-                    'series': card_set.get('name', final_results.get(card_id, {}).get('series', 'Unknown')),
-                    'series_id': card_set.get('id', final_results.get(card_id, {}).get('series_id')),
-                    'number': card.get('localId', final_results.get(card_id, {}).get('number', '?')),
-                    'image_url': f"{img_base}/low.jpg" if img_base else final_results.get(card_id, {}).get('image_url', ''),
-                    'language': target_lang
+        c_name = c.get('name', '').lower()
+        # 일본어 모드: 가타카나 포함 OR 영어 이름 포함 (Zubat 등 대응)
+        if target_lang == 'ja':
+            if (jp_name and jp_name in c_name) or (eng_name in c_name):
+                final_results[c.get('id')] = {
+                    'id': c.get('id'), 'name': c.get('name'), 'series': c.get('series'),
+                    'series_id': c.get('series_id'), 'number': c.get('number'),
+                    'image_url': c.get('image'), 'language': 'ja'
                 }
-    except Exception as e:
-        print(f"❌ API 호출 실패 (로컬 데이터로 대체): {e}")
+        else:
+            if eng_name in c_name:
+                final_results[c.get('id')] = {
+                    'id': c.get('id'), 'name': c.get('name'), 'series': c.get('series'),
+                    'series_id': c.get('series_id'), 'number': c.get('number'),
+                    'image_url': c.get('image'), 'language': 'en'
+                }
 
-    # 리스트로 변환 및 반환
+    # 3. TCGdex API '전체 카드' 엔드포인트 활용 (가장 확실한 방법)
+    # 특정 이름을 검색어로 던지지 않고, 전체 리스트에서 필터링합니다.
+    try:
+        # 일본어 모드여도 영어 이름으로 등록된 경우가 많으므로 두 검색어 모두 활용
+        api_lang = 'ja' if target_lang == 'ja' else 'en'
+        # 주의: 여기서는 params={'name': ...} 을 빼고 호출한 뒤 내부에서 거릅니다.
+        # (만약 데이터가 너무 많아 속도가 느리면 다시 params를 넣되, Fallback을 강화합니다)
+        url = f"https://api.tcgdex.net/v2/{api_lang}/cards"
+        
+        # 속도를 위해 우선 검색어를 넣어서 시도
+        res = requests.get(url, params={'name': jp_name if target_lang == 'ja' else eng_name}, timeout=5)
+        
+        if res.status_code == 200:
+            for card in res.json():
+                cid = card.get('id')
+                if cid not in final_results:
+                    # 한번 더 검증: 이름에 검색어가 들어있는지 확인
+                    c_name_api = card.get('name', '').lower()
+                    if (jp_name and jp_name in c_name_api) or (eng_name in c_name_api):
+                        img = card.get('image')
+                        final_results[cid] = {
+                            'id': cid,
+                            'name': card.get('name'),
+                            'series': card.get('set', {}).get('name'),
+                            'series_id': card.get('set', {}).get('id'),
+                            'number': card.get('localId'),
+                            'image_url': f"{img}/low.jpg" if img else "",
+                            'language': api_lang
+                        }
+
+        # 🌟 보강: 결과가 여전히 너무 적으면 영문 엔드포인트에서 일본어 데이터를 강제 추출
+        if target_lang == 'ja' and len(final_results) < 15:
+            # 영문 이름으로 다시 한번 공격적으로 검색
+            res_fb = requests.get(url, params={'name': eng_name}, timeout=5)
+            if res_fb.status_code == 200:
+                for card in res_fb.json():
+                    cid = card.get('id')
+                    if cid not in final_results:
+                        img = card.get('image')
+                        final_results[cid] = {
+                            'id': cid, 'name': card.get('name'),
+                            'series': card.get('set', {}).get('name'),
+                            'series_id': card.get('set', {}).get('id'),
+                            'number': card.get('localId'),
+                            'image_url': f"{img}/low.jpg" if img else "",
+                            'language': 'ja'
+                        }
+    except Exception as e:
+        print(f"API Error: {e}")
+
     return jsonify(list(final_results.values()))
 
 @app.route('/api/price', methods=['POST'])
