@@ -58,7 +58,7 @@ if __name__ == "__main__":
     # 1. 내가 보정하고 싶은 파일 (기존에 스크래핑한 파일)
     TARGET = 'backend/data/pokemon_series_us_info.json'
     
-    # 2. 방금 GitHub에서 복사해온 기준 데이터 파일
+    # 2. GitHub에서 복사해온 기준 데이터 파일
     BASE_EN = 'sets/en.json' # 폴더 이름/파일명
     
     update_codes_from_local_json(TARGET, BASE_EN)

@@ -3,6 +3,11 @@ async function searchCards() {
     const input = document.getElementById('searchInput');
     const query = input.value.trim();
     
+    // HTML의 id="langSelect"와 일치시킴
+    const langSelect = document.getElementById('langSelect');
+    // 사용자가 선택한 값 (EN 또는 JP)을 가져옴
+    const selectedLang = langSelect ? langSelect.value : 'EN';
+
     if (!query) {
         alert("검색하실 포켓몬 이름을 입력해주세요!");
         return;
@@ -12,30 +17,31 @@ async function searchCards() {
     const cardList = document.getElementById('cardList');
     const priceSection = document.getElementById('priceResultSection');
     
-    // 초기화 및 로딩 표시
     cardList.innerHTML = '<p style="text-align:center; width:100%; padding: 40px;">🔍 데이터를 찾는 중입니다...</p>';
     cardListSection.classList.remove('hidden');
     priceSection.classList.add('hidden'); 
 
     try {
-        // 서버 API 호출
-        const response = await fetch(`/api/search?name=${encodeURIComponent(query)}`);
+        // 서버 API 호출 시 language 파라미터에 EN 또는 JP 전달
+        const response = await fetch(`/api/search?name=${encodeURIComponent(query)}&language=${selectedLang}`);
         if (!response.ok) throw new Error("서버 응답 오류");
         
         const cards = await response.json();
         cardList.innerHTML = '';
 
         if (!cards || cards.length === 0) {
-            cardList.innerHTML = '<p style="text-align:center; width:100%; padding: 40px;">해당하는 카드가 DB에 없습니다.</p>';
+            cardList.innerHTML = '<p style="text-align:center; width:100%; padding: 40px;">해당하는 카드가 없습니다.</p>';
             return;
         }
 
-        // 결과 카드 렌더링
         cards.forEach(card => {
             const cardName = (card.name || "Unknown Name").replace(/'/g, "\\'");
             const cardSeries = (card.series || "Unknown Set").replace(/'/g, "\\'");
-            const cardSeriesId = (card.series_id || "").replace(/'/g, "\\'"); // 추가: series_id 처리
+            const cardSeriesId = (card.series_id || "").replace(/'/g, "\\'");
             const cardNum = card.number || "??";
+            
+            // [수정 핵심] selectedLang이 'JP'인 경우 'ja'로, 아니면 'en'으로 서버에서 처리하도록 language 정보 저장
+            const cardLang = card.language || (selectedLang === 'JP' ? 'ja' : 'en');
 
             const cardElement = document.createElement('div');
             cardElement.className = 'card-item';
@@ -45,7 +51,7 @@ async function searchCards() {
                     <h4>${card.name}</h4>
                     <p class="series-info">${card.series} <b style="color:#3b4cca;">(${card.series_id})</b></p>
                     <p class="number-info">#${card.number}</p>
-                    <button onclick="getPrices('${cardName}', '${cardSeries}', '${cardNum}', '${cardSeriesId}')">시세 확인</button>
+                    <button onclick="getPrices('${cardName}', '${cardSeries}', '${cardNum}', '${cardSeriesId}', '${cardLang}')">시세 확인</button>
                 </div>
             `;
             cardList.appendChild(cardElement);
@@ -58,17 +64,15 @@ async function searchCards() {
 }
 
 // 2. 이베이 시세 가져오기 함수
-async function getPrices(name, series, number, series_id) {
+async function getPrices(name, series, number, series_id, language) {
     const priceSection = document.getElementById('priceResultSection');
     const loading = document.getElementById('loading');
     const tableBody = document.getElementById('priceTableBody');
     
-    // 섹션 표시 및 초기화
     priceSection.classList.remove('hidden');
     loading.classList.remove('hidden');
     tableBody.innerHTML = '';
     
-    // 화면 하단 시세창으로 스무스하게 이동
     priceSection.scrollIntoView({ behavior: 'smooth' });
 
     try {
@@ -79,7 +83,8 @@ async function getPrices(name, series, number, series_id) {
                 name: name, 
                 series: series, 
                 number: number,
-                series_id: series_id  // 서버(app.py)로 series_id 전달
+                series_id: series_id,
+                lang: language // 'ja' 또는 'en'이 전달됨
             })
         });
 
@@ -93,11 +98,15 @@ async function getPrices(name, series, number, series_id) {
             return;
         }
 
-        // 시세 데이터 테이블 추가
         prices.forEach(item => {
+            const ebayLink = item.link || `https://www.ebay.com/sch/i.html?_nkw=${encodeURIComponent(item.title)}&LH_Sold=1&LH_Complete=1`;
+            
             const row = `
-                <tr>
-                    <td><div style="font-size:0.85rem; color:#444; line-height:1.4;">${item.title}</div></td>
+                <tr onclick="window.open('${ebayLink}', '_blank')" style="cursor:pointer;" title="클릭하면 이베이 상세 페이지로 이동합니다">
+                    <td>
+                        <div style="font-size:0.85rem; color:#444; line-height:1.4;">${item.title}</div>
+                        <small style="color:#3498db; font-weight:bold;">🔗 이베이에서 상세 보기</small>
+                    </td>
                     <td><b style="color:#2f3542; white-space: nowrap;">${item.price} ${item.currency}</b></td>
                     <td style="color:#747d8c; font-size:0.85rem; white-space: nowrap;">${item.sold_date}</td>
                 </tr>
