@@ -1,5 +1,3 @@
-# Check-_eBay_price
-
 ### 📊 PokePrice-Tracker
 다국어(한글, 영어, 일본어) 포켓몬 카드 검색 및 이베이(eBay) 최근 낙찰가를 기반으로 실시간 시세를 조회하는 웹 어플리케이션입니다.
 
@@ -36,46 +34,83 @@ swsh10.5와 같은 소수점 ID를 가진 스페셜 세트(Crown Zenith 등)도 
 
 - Environment: Python-dotenv (환경 변수 관리)
 
-### 📂 프로젝트 구조 (Project Structure)
-Plaintext
+### 📂 Project Structure
+```plaintext
 .
-├── app.py                 # Flask 메인 서버 (검색 및 데이터 통합 로직)
-├── main.py                # PokemonPriceApp 클래스 및 스크래퍼 인스턴스
-├── .env                   # 환경 설정 파일
+├── app.py
+├── main.py
+├── .env
 ├── backend/
 │   ├── data/
-│   │   ├── pokemon_names.json     # 한/영/일 이름 매핑 테이블
-│   │   ├── all_cards_en.json      # 영문 카드 로컬 DB
-│   │   ├── pokemon_series_info.json # 한글 시리즈 정보
-│   │   ├── pokemon_series_jp_info.json # 일본 시리즈 정보
-│   │   ├── pokemon_series_us_info.json # 영문시리즈 정보
-│   │   └── all_cards_jp.json      # 일문 카드 로컬 DB
-│   └── scraper/
-│   │   ├── ebay_scraper.py        # eBay 시세 크롤링 로직
-│   │   ├── all_card_en_scraper.py  # 영문 카드정보 크롤링 로직
-│   │   ├── all_card_jp_scraper.py  # 일본 카드정보 크롤링 로직
-│   │   ├── all_card_kor_scraper.py  # 한글 카드정보 크롤링 로직
-│   │   ├── import_local_data.py   # 정제된 데이터를 서비스가 꺼내 쓰기 좋게 창고(DB)에 넣는 역할
-│   │   ├── pokemon_card_series_jp_scraper.py  # 일본 시리즈 정보 크롤링 로직
-│   │   ├── pokemon_card_series_kor_scraper.py  # 한글 시리즈 정보 크롤링 로직
-│   │   ├── pokemon_card_series_us_scraper.py  # 영문 시리즈 정보 크롤링 로직
-│   │   ├── pokemon_name_scraper_api.py  # 모든 포켓몬 이름 정보 크롤링 로직
-│   │   ├── pokemon_tcg_api_scraper.py  # 외부 API에서 원본 데이터를 가져오는 역할
-│   │   └── update_codes_local.py  #수집된 데이터의 정확도를 높이는 편집자 역할
-│   ├── data/
-│       └── search_teanslator.py
+│   │   ├── pokemon_names.json
+│   │   ├── all_cards_en.json
+│   │   ├── all_cards_jp.json
+│   │   ├── pokemon_series_info.json
+│   │   ├── pokemon_series_jp_info.json
+│   │   └── pokemon_series_us_info.json
+│   │
+│   ├── scraper/
+│   │   ├── ebay_scraper.py
+│   │   ├── all_card_en_scraper.py
+│   │   ├── all_card_jp_scraper.py
+│   │   ├── all_card_kor_scraper.py
+│   │   ├── pokemon_card_series_kor_scraper.py
+│   │   ├── pokemon_card_series_jp_scraper.py
+│   │   ├── pokemon_card_series_us_scraper.py
+│   │   ├── pokemon_name_scraper_api.py
+│   │   ├── pokemon_tcg_api_scraper.py
+│   │   ├── import_local_data.py
+│   │   └── update_codes_local.py
+│   │
+│   └── data/
+│       └── search_translator.py
+│
 ├── frontend/
-│   ├── static/            # CSS, JS 파일
-│   │       ├── css/
-│   │       │   └── style.css
-│   │       ├── js/
-│   │       │   └── main.js
-│   ├── templates/         # HTML 템플릿 (index.html)
-│   │       │   └── ndex.html
-└── pokemon-tcg-data
-│   ├──  cards/
-│   ├──  decks/
-│   └──  sets/
+│   ├── static/
+│   │   ├── css/style.css
+│   │   └── js/main.js
+│   └── templates/index.html
+│
+└── pokemon-tcg-data/
+    ├── cards/
+    ├── decks/
+    └── sets/
+```
+
+
+### 🧠 주요 파일 및 역할
+
+| 구분 | 파일 | 설명 |
+|---|---|---|
+| Server | `app.py` | Flask 메인 서버, 검색 요청 처리 |
+| Core | `main.py` | 앱 초기화 및 서비스 조합 |
+| Config | `.env` | API Key 및 환경 변수 |
+| Scraper | `ebay_scraper.py` | eBay 실거래 시세 수집 |
+| API | `pokemon_tcg_api_scraper.py` | Pokémon TCG API 연동 |
+| Data | `pokemon_names.json` | 포켓몬 다국어 이름 매핑 |
+| Frontend | `index.html` | 검색 UI 템플릿 |
+
+### 🔍 Data Collection & Scraping Layer
+
+eBay
+
+ebay_scraper.py – 실거래 완료 데이터 기반 시세 수집
+
+Pokémon TCG API
+
+pokemon_tcg_api_scraper.py – 공식 카드/이미지 메타데이터
+
+Multilingual Card Data
+
+all_card_en_scraper.py - 영문버전 카드정보 스크래퍼
+
+all_card_jp_scraper.py - 일어버전 카드정보 스크래퍼
+
+all_card_kor_scraper.py - 한글버전 카드정보 스크래퍼
+
+Series Metadata
+
+pokemon_card_series_*_scraper.py - 각 언어별 시리즈 정보 스크래퍼
 
 ### 🔍 핵심 로직: 통합 검색 (Unified Search)
 사용자가 입력한 한글 포켓몬명을 기반으로 로컬 데이터와 API 데이터를 병합하는 알고리즘을 사용합니다.
@@ -83,36 +118,45 @@ Plaintext
 Python
 
 #### 1. 한글명 -> 타겟 언어명 변환
+```
 name_info = POKEMON_MASTER_MAP.get(name_input)
     if name_info:
         search_query = name_info.get('japanese_name' if target_lang == 'ja' else 'english_name')
     else:
         search_query = name_input
+```
 
 #### 2. 로컬 파일(JSON) 검색
+```
 local_matches = [c for c in CARDS_EN_LOCAL if search_query.lower() in c['name'].lower()]
+```
 
 #### 3. TCGdex API 호출 및 데이터 병합 (중복 제거)
+```
 final_results[card_id] = { ...merged_data... }
+```
 
 ### 📈 시세 조회 방식 (Pricing Logic)
 카드 선택 시 eBay에서 다음과 같은 쿼리로 검색하여 가장 신뢰도 높은 시세를 추출합니다.
-
+```
 영문: {Card Name} {Number} {Series ID} Pokemon Card
 
 일문: Japanese {Series ID} {Card Name} {Number} Pokemon Card
-
+```
 ### 💡 설치 및 실행 방법
 저장소 클론:
-git clone https://github.com/yourusername/PokePrice-Tracker.git
-
+```
+git clone https://github.com/kwanhyoungkim/PokePrice-Tracker.git
+```
 의존성 설치:
+```
 pip install -r requirements.txt
-
+```
 서버 실행:
+```
 python app.py
 접속: http://localhost:5001
-
+```
 ### 📝 라이선스 및 데이터 출처
 본 프로젝트는 개인 학습 및 시세 확인을 목적으로 제작되었습니다.
 
