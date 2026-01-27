@@ -1,6 +1,17 @@
 ### 📊 PokePrice-Tracker
 다국어(한글, 영어, 일본어) 포켓몬 카드 검색 및 이베이(eBay) 최근 낙찰가를 기반으로 실시간 시세를 조회하는 웹 어플리케이션입니다.
 
+### Preview / Feature Highlights
+<img width="1469" height="692" alt="Image" src="https://github.com/user-attachments/assets/ce60baa9-3278-4549-9cd0-b9f24b3ec31a" />
+
+<img width="1469" height="693" alt="Image" src="https://github.com/user-attachments/assets/41a479e7-609b-49a0-b0f5-36fbc75430f7" />
+
+<img width="1469" height="570" alt="Image" src="https://github.com/user-attachments/assets/20fa929f-f966-43c7-8010-64dd83f25908" />
+
+<img width="1469" height="693" alt="Image" src="https://github.com/user-attachments/assets/6cda3eea-733e-48c1-be0d-4f1e4eb4423e" />
+
+<img width="1469" height="693" alt="Image" src="https://github.com/user-attachments/assets/c6fc56c9-aada-453e-8d07-49ae9136cb06" />
+
 ### 🚀 주요 기능 (Key Features)
 ##### 다국어 통합 검색
 한글 이름(예: '기라티나') 입력 시 자동으로 영어(Giratina) 및 일본어(ギラティナ)로 변환하여 검색을 수행합니다.
@@ -92,15 +103,15 @@ swsh10.5와 같은 소수점 ID를 가진 스페셜 세트(Crown Zenith 등)도 
 
 ### 🔍 Data Collection & Scraping Layer
 
-eBay
+#### eBay
 
 ebay_scraper.py – 실거래 완료 데이터 기반 시세 수집
 
-Pokémon TCG API
+#### Pokémon TCG API
 
 pokemon_tcg_api_scraper.py – 공식 카드/이미지 메타데이터
 
-Multilingual Card Data
+#### Multilingual Card Data
 
 all_card_en_scraper.py - 영문버전 카드정보 스크래퍼
 
@@ -108,7 +119,7 @@ all_card_jp_scraper.py - 일어버전 카드정보 스크래퍼
 
 all_card_kor_scraper.py - 한글버전 카드정보 스크래퍼
 
-Series Metadata
+#### Series Metadata
 
 pokemon_card_series_*_scraper.py - 각 언어별 시리즈 정보 스크래퍼
 
