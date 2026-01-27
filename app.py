@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request, jsonify
 import requests
 import os
-import json  # JSON 파일을 읽기 위해 추가
+import json
 from dotenv import load_dotenv
+from main import PokemonPriceApp
 
 load_dotenv()
 
@@ -14,79 +15,138 @@ app = Flask(
     template_folder=os.path.join(base_dir, 'frontend', 'templates')
 )
 
-POKEMON_TCG_API_KEY = os.getenv('POKEMON_TCG_API_KEY')
-POKEMON_TCG_BASE_URL = 'https://api.pokemontcg.io/v2'
+# 경로 설정
+JSON_PATH = os.path.join(base_dir, 'backend', 'data', 'pokemon_names.json')
+JSON_JP_PATH = os.path.join(base_dir, 'backend', 'data', 'all_cards_jp.json')
+JSON_EN_PATH = os.path.join(base_dir, 'backend', 'data', 'all_cards_en.json')
 
-# --- [추가] JSON 파일을 읽어와서 매핑 사전 만들기 ---
-def load_pokemon_names():
-    json_path = os.path.join(base_dir,'backend', 'data', 'pokemon_names.json')
+# DB 및 스크래퍼 로직 인스턴스
+price_app = PokemonPriceApp()
+
+def load_json_file(file_path):
+    if not os.path.exists(file_path):
+        print(f"⚠️  경고: {file_path} 없음")
+        return []
     try:
-        with open(json_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-            # {'한글이름': '영어이름'} 형태의 딕셔너리로 변환
-            return {item['korean_name']: item['english_name'] for item in data}
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
     except Exception as e:
-        print(f"❌ JSON 로드 실패: {e}")
-        return {}
+        print(f"❌ 로드 에러: {e}")
+        return []
 
-POKEMON_NAME_MAP = load_pokemon_names()
-print(f"✅ 포켓몬 이름 {len(POKEMON_NAME_MAP)}개 로드 완료")
+# 데이터 사전 로드 (검색 속도 향상)
+POKEMON_MASTER_MAP = {item['korean_name']: item for item in load_json_file(JSON_PATH)}
+CARDS_JP_LOCAL = load_json_file(JSON_JP_PATH)
+CARDS_EN_LOCAL = load_json_file(JSON_EN_PATH)
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
+
+
 @app.route('/api/search')
 def search_cards():
     name_input = request.args.get('name', '').strip()
+    raw_lang = (request.args.get('language') or request.args.get('lang') or 'EN').upper()
+    target_lang = 'ja' if raw_lang == 'JP' else 'en'
+    
     if not name_input:
-        return jsonify({'error': '검색어를 입력해주세요'}), 400
+        return jsonify([])
 
-    # JSON 매핑 사용
-    search_name = POKEMON_NAME_MAP.get(name_input, name_input)
-    print(f"[DEBUG] 입력: {name_input} -> 변환: {search_name}")
+    # 1. 이름 정보 확보
+    name_info = POKEMON_MASTER_MAP.get(name_input)
+    eng_name = name_info.get('english_name', '').lower() if name_info else name_input.lower()
+    jp_name = name_info.get('japanese_name', '') if name_info else ""
+
+    final_results = {}
+
+    # 2. 로컬 데이터 검색 (강화된 매칭)
+    local_source = CARDS_JP_LOCAL if target_lang == 'ja' else CARDS_EN_LOCAL
+    for c in local_source:
+        c_name = c.get('name', '').lower()
+        if target_lang == 'ja':
+            if (jp_name and jp_name in c_name) or (eng_name in c_name):
+                final_results[c.get('id')] = {
+                    'id': c.get('id'), 'name': c.get('name'), 'series': c.get('series'),
+                    'series_id': c.get('series_id'), 'number': c.get('number'),
+                    'image_url': c.get('image'), 'language': 'ja'
+                }
+        else:
+            if eng_name in c_name:
+                final_results[c.get('id')] = {
+                    'id': c.get('id'), 'name': c.get('name'), 'series': c.get('series'),
+                    'series_id': c.get('series_id'), 'number': c.get('number'),
+                    'image_url': c.get('image'), 'language': 'en'
+                }
+
+    # 3. TCGdex API '전체 카드' 엔드포인트 활용
+    try:
+        api_lang = 'ja' if target_lang == 'ja' else 'en'
+        url = f"https://api.tcgdex.net/v2/{api_lang}/cards"
+        
+        res = requests.get(url, params={'name': jp_name if target_lang == 'ja' else eng_name}, timeout=5)
+        
+        if res.status_code == 200:
+            for card in res.json():
+                cid = card.get('id')
+                if cid not in final_results:
+                    c_name_api = card.get('name', '').lower()
+                    if (jp_name and jp_name in c_name_api) or (eng_name in c_name_api):
+                        img = card.get('image')
+                        final_results[cid] = {
+                            'id': cid,
+                            'name': card.get('name'),
+                            'series': card.get('set', {}).get('name'),
+                            'series_id': card.get('set', {}).get('id'),
+                            'number': card.get('localId'),
+                            'image_url': f"{img}/low.jpg" if img else "",
+                            'language': api_lang
+                        }
+
+        if target_lang == 'ja' and len(final_results) < 15:
+            res_fb = requests.get(url, params={'name': eng_name}, timeout=5)
+            if res_fb.status_code == 200:
+                for card in res_fb.json():
+                    cid = card.get('id')
+                    if cid not in final_results:
+                        img = card.get('image')
+                        final_results[cid] = {
+                            'id': cid, 'name': card.get('name'),
+                            'series': card.get('set', {}).get('name'),
+                            'series_id': card.get('set', {}).get('id'),
+                            'number': card.get('localId'),
+                            'image_url': f"{img}/low.jpg" if img else "",
+                            'language': 'ja'
+                        }
+    except Exception as e:
+        print(f"API Error: {e}")
+
+    return jsonify(list(final_results.values()))
+
+@app.route('/api/price', methods=['POST'])
+def get_prices():
+    data = request.json
+    name = data.get('name')
+    number = data.get('number')
+    series_id = data.get('series_id', '')
+    lang = data.get('lang', 'en').lower()
 
     try:
-        headers = {'X-Api-Key': POKEMON_TCG_API_KEY} if POKEMON_TCG_API_KEY else {}
-        params = {'q': f'name:"{search_name}*"', 'pageSize': 20}
-
-        response = requests.get(
-            f'{POKEMON_TCG_BASE_URL}/cards',
-            headers=headers,
-            params=params,
-            timeout=20
-        )
-
-        if response.status_code != 200:
-            print(f"[ERROR] API 응답 코드: {response.status_code}")
-            return jsonify({'error': 'API 호출 실패'}), 500
-
-        data = response.json()
-        cards = data.get('data', [])
+        prefix = "Japanese " if lang == 'ja' else ""
+        ebay_query = f"{prefix} {series_id} {name} {number} Pokemon Card"
         
-        result = []
-        for card in cards:
-            # .get()을 사용하여 데이터가 없더라도 500 에러가 나지 않게 방어
-            images = card.get('images', {})
-            card_set = card.get('set', {})
-            
-            result.append({
-                'id': card.get('id'),
-                'name': card.get('name'),
-                'series': card_set.get('name', 'Unknown'), # 세트 이름 안전하게 가져오기
-                'number': card.get('number', '?'),
-                'image_url': images.get('small', ''),
-                'image_url_large': images.get('large', ''),
-                'rarity': card.get('rarity', 'N/A'),
-                'tcg_id': card.get('id') # id와 동일하게 설정
-            })
+        print(f"🌐 [eBay 쿼리] {ebay_query}")
+        prices = price_app.scraper.fetch_recent_sales(ebay_query)
         
-        return jsonify(result)
+        if not prices or len(prices) < 2:
+            alt_query = f"{prefix}{name} {series_id} card"
+            prices = price_app.scraper.fetch_recent_sales(alt_query)
 
+        return jsonify(prices if prices else [])
     except Exception as e:
-        # 터미널에 정확히 어떤 줄에서 어떤 에러가 났는지 출력합니다.
-        print(f"[ERROR] 검색 중 상세 오류: {str(e)}") 
-        return jsonify({'error': f'서버 오류: {str(e)}'}), 500
+        print(f"❌ 가격 조회 오류: {e}")
+        return jsonify([]), 500
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5001)

@@ -1,788 +1,1784 @@
 [
   {
-    "series_name_us": "1998 Pokémon Demo Game Plastic Pack",
-    "release_date_us": "Unknown",
-    "era": "First generation sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Pokémon Base Set",
-    "release_date_us": "October 20, 1996",
-    "era": "First generation sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Jungle",
-    "release_date_us": "June 16, 1999",
-    "era": "First generation sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Fossil",
-    "release_date_us": "October 10, 1999",
-    "era": "First generation sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Base Set 2",
-    "release_date_us": "February 24, 2000",
-    "era": "First generation sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Team Rocket",
-    "release_date_us": "April 24, 2000",
-    "era": "First generation sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Gym Heroes",
-    "release_date_us": "August 14, 2000",
-    "era": "First generation sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Gym Challenge",
-    "release_date_us": "October 16, 2000",
-    "era": "First generation sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Neo Genesis",
-    "release_date_us": "Unknown",
-    "era": "Second generation sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Neo Discovery",
-    "release_date_us": "Unknown",
-    "era": "Second generation sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Southern Islands",
-    "release_date_us": "Unknown",
-    "era": "Second generation sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Neo Revelation",
-    "release_date_us": "Unknown",
-    "era": "Second generation sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Neo Destiny",
-    "release_date_us": "Unknown",
-    "era": "Second generation sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Legendary Collection",
-    "release_date_us": "Unknown",
-    "era": "Second generation sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Expedition Base Set",
-    "release_date_us": "Unknown",
-    "era": "Second generation sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Aquapolis",
-    "release_date_us": "Unknown",
-    "era": "Second generation sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Skyridge",
-    "release_date_us": "May 12, 2003",
-    "era": "Second generation sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "EX Ruby and Sapphire",
-    "release_date_us": "June 18, 2003",
-    "era": "Third Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "EX Sandstorm",
-    "release_date_us": "September 18, 2003",
-    "era": "Third Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "EX Dragon",
-    "release_date_us": "Unknown",
-    "era": "Third Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "EX Team Magma vs Team Aqua",
-    "release_date_us": "Unknown",
-    "era": "Third Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "EX Hidden Legends",
-    "release_date_us": "Unknown",
-    "era": "Third Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "EX Fire Red and Leaf Green",
-    "release_date_us": "Unknown",
-    "era": "Third Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "EX Team Rocket Returns",
-    "release_date_us": "Unknown",
-    "era": "Third Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "EX Deoxys",
-    "release_date_us": "Unknown",
-    "era": "Third Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "EX Emerald",
-    "release_date_us": "Unknown",
-    "era": "Third Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "EX Unseen Forces",
-    "release_date_us": "Unknown",
-    "era": "Third Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "EX Delta Species",
-    "release_date_us": "Unknown",
-    "era": "Third Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "EX Legend Maker",
-    "release_date_us": "Unknown",
-    "era": "Third Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "EX Holon Phantoms",
-    "release_date_us": "Unknown",
-    "era": "Third Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "EX Crystal Guardians",
-    "release_date_us": "Unknown",
-    "era": "Third Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "EX Dragon Frontiers",
-    "release_date_us": "Unknown",
-    "era": "Third Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "EX Power Keepers",
-    "release_date_us": "Unknown",
-    "era": "Third Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Diamond and Pearl Base Set",
-    "release_date_us": "Unknown",
-    "era": "Fourth Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Diamond and Pearl – Mysterious Treasures",
-    "release_date_us": "Unknown",
-    "era": "Fourth Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Diamond and Pearl – Secret Wonders",
-    "release_date_us": "Unknown",
-    "era": "Fourth Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Diamond and Pearl – Great Encounters",
-    "release_date_us": "Unknown",
-    "era": "Fourth Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Diamond and Pearl – Majestic Dawn",
-    "release_date_us": "Unknown",
-    "era": "Fourth Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Diamond and Pearl – Legends Awakened",
-    "release_date_us": "Unknown",
-    "era": "Fourth Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Diamond and Pearl – Stormfront",
-    "release_date_us": "Unknown",
-    "era": "Fourth Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Platinum Base Set",
-    "release_date_us": "October 13, 2008",
-    "era": "Fourth Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Platinum – Rising Rivals",
-    "release_date_us": "December 26, 2008",
-    "era": "Fourth Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Platinum – Supreme Victors",
-    "release_date_us": "March 6, 2009",
-    "era": "Fourth Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Platinum – Arceus",
-    "release_date_us": "April 9, 2009",
-    "era": "Fourth Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "HeartGold & SoulSilver",
-    "release_date_us": "Unknown",
-    "era": "Fourth Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "HS–Unleashed",
-    "release_date_us": "Unknown",
-    "era": "Fourth Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "HS–Undaunted",
-    "release_date_us": "Unknown",
-    "era": "Fourth Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "HS–Triumphant",
-    "release_date_us": "Unknown",
-    "era": "Fourth Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Call of Legends",
-    "release_date_us": "Unknown",
-    "era": "Fourth Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Heartgold and Soulsilver Collection",
-    "release_date_us": "Unknown",
-    "era": "Fourth Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Heartgold and Soulsilver special decks",
-    "release_date_us": "Unknown",
-    "era": "Fourth Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Heartgold and Soulsilver Revived Legends",
-    "release_date_us": "Unknown",
-    "era": "Fourth Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Lost Link Mini-Series",
-    "release_date_us": "Unknown",
-    "era": "Fourth Generation Sets",
-    "type": "Text-based"
-  },
-  {
-    "series_name_us": "Black & White",
-    "release_date_us": "April 6, 2011",
-    "era": "Fifth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Black & White–Emerging Powers",
-    "release_date_us": "August 31, 2011",
-    "era": "Fifth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Black & White–Noble Victories",
-    "release_date_us": "November 16, 2011",
-    "era": "Fifth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Black & White–Next Destinies",
-    "release_date_us": "February 8, 2012",
-    "era": "Fifth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Black & White–Dark Explorers",
-    "release_date_us": "May 9, 2012",
-    "era": "Fifth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Black & White–Dragons Exalted",
-    "release_date_us": "August 15, 2012",
-    "era": "Fifth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Dragon Vault",
-    "release_date_us": "October 12, 2012",
-    "era": "Fifth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Black & White–Boundaries Crossed",
-    "release_date_us": "November 2012",
-    "era": "Fifth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Black & White–Plasma Storm",
-    "release_date_us": "February 2013",
-    "era": "Fifth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Black & White–Plasma Freeze",
-    "release_date_us": "May 2013",
-    "era": "Fifth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Black & White–Plasma Blast",
-    "release_date_us": "August 2013",
-    "era": "Fifth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Black & White–Legendary Treasures",
-    "release_date_us": "It is the 11th and final release ofPokémon BlackandWhite. Released on November 6, 2013, in the United States, this set has 115 cards plus 25RC(“Radiant Collection”) cards. There are ten returning Pokémon-EX cards, including Mewtwo-EX, Darkrai-EX, and Keldeo-EX, and two new Pokémon-EX cards, Chandelure-EX and Excadrill-EX. The 25 “Radiant Collection” cards will have a special coating and foil patterns, in addition to having their own numbering and rarity scheme. This is the only set with actual golden Pokémon cards. The set includes Golden Reshiram and Golden Zekrom.",
-    "era": "Fifth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "XY–Kalos Starter Set",
-    "release_date_us": "It featured the three starters of the Kalos Region (Chespin,Fennekin, andFroakie) with 60-card decks built around each, released on November 8, 2013, prior to the sets' release. It introduced Fairy-type cards, and the Basic Energy to go along with that, being the first new type addition after 2012's Dragon-type.",
-    "era": "Sixth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "XY",
-    "release_date_us": "February 5, 2014",
-    "era": "Sixth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "XY–Flashfire",
-    "release_date_us": "May 7, 2014",
-    "era": "Sixth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "XY–Furious Fists",
-    "release_date_us": "August 13, 2014",
-    "era": "Sixth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "XY–Phantom Forces",
-    "release_date_us": "It brings 122 new cards to the card game, including a new mechanic called \"Spirit Link\" that allows Mega Pokémon to evolve without ending the player's turn. It also introduces six new Pokémon-EX cards, and two new Mega Evolutions to the game.The card \"Lysandre's Trump Card\" (numbered 99/119 and 118/119), was banned from all sanctioned Pokémon Organized Play events from June 15, 2015, onward.This set also released the only silver Pokémon card to every be printed in a main set, Dialga EX.",
-    "era": "Sixth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "XY–Primal Clash",
-    "release_date_us": "February 4, 2015",
-    "era": "Sixth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Double Crisis",
-    "release_date_us": "March 25, 2015",
-    "era": "Sixth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "XY–Roaring Skies",
-    "release_date_us": "May 6, 2015",
-    "era": "Sixth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "XY–Ancient Origins",
-    "release_date_us": "August 12, 2015",
-    "era": "Sixth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "XY—BREAKthrough",
-    "release_date_us": "This set brings 164 new cards and introduces a new type of Evolution called BREAK which gives an additional Attack or Ability to a Pokémon while retaining its previous Attacks and Ability. It also starts the 2018 legal block sets for official Pokémon TCG tournaments.",
-    "era": "Sixth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "XY–BREAKpoint",
-    "release_date_us": "February 3, 2016",
-    "era": "Sixth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Generations",
-    "release_date_us": "February 22, 2016",
-    "era": "Sixth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "XY–Fates Collide",
-    "release_date_us": "May 2, 2016",
-    "era": "Sixth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "XY–Steam Siege",
-    "release_date_us": "August 3, 2016",
-    "era": "Sixth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "XY–Evolutions",
-    "release_date_us": "November 2, 2016",
-    "era": "Sixth Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sun & Moon",
-    "release_date_us": "February 3, 2017",
-    "era": "Seventh Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sun & Moon–Guardians Rising",
-    "release_date_us": "May 5, 2017",
-    "era": "Seventh Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sun & Moon–Burning Shadows",
-    "release_date_us": "August 4, 2017",
-    "era": "Seventh Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sun & Moon–Shining Legends",
-    "release_date_us": "Shining Legendsis a special expansion set in theSun & Moonseries of Pokémon cards. It was released on October 6, 2017, however, Pokémon Center Online had already released them if players pre-ordered from the website. This set brings back the Shining mechanics from the Second Generation sets (Neo series), with the Legendary Pokémon.",
-    "era": "Seventh Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sun & Moon–Crimson Invasion",
-    "release_date_us": "November 3, 2017",
-    "era": "Seventh Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sun & Moon–Ultra Prism",
-    "release_date_us": "February 2, 2018",
-    "era": "Seventh Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sun & Moon–Forbidden Light",
-    "release_date_us": "May 4, 2018",
-    "era": "Seventh Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sun & Moon–Celestial Storm",
-    "release_date_us": "August 3, 2018",
-    "era": "Seventh Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Dragon Majesty",
-    "release_date_us": "Dragon Majestyis the second special expansion set released on September 7, 2018. The booster packs were sold as part of special collection boxes. The set features over 70 cards, including 6 Pokémon-GX cards, 2 Prism Star cards, and 6 full-art cards.",
-    "era": "Seventh Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sun & Moon–Lost Thunder",
-    "release_date_us": "November 2, 2018",
-    "era": "Seventh Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sun & Moon–Team Up",
-    "release_date_us": "February 1, 2019",
-    "era": "Seventh Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Detective Pikachu",
-    "release_date_us": "Detective Pikachuis the third special expansion released on March 29, 2019. The booster packs were sold as part of special collection boxes. The set features 18 cards with artwork and attacks based on thePokémon: Detective Pikachufilm. Many cards from the set were also distributed with a foil stamp if you bought a ticket to the movie.",
-    "era": "Seventh Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sun & Moon–Unbroken Bonds",
-    "release_date_us": "May 3, 2019",
-    "era": "Seventh Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sun & Moon–Unified Minds",
-    "release_date_us": "August 2, 2019",
-    "era": "Seventh Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Hidden Fates",
-    "release_date_us": "Hidden Fatesis the third special expansion set released on August 23, 2019. For the first time, a Tag Team Pokémon GX trio card was released featuring the legendary birds of Articuno, Moltres, and Zapdos. Also, over 75 Pokémon are featured in their shiny forms including Charizard-GX and Mewtwo-GX. The set features over 150 cards, including 1 brand new Tag Team Pokémon-GX trio, 8 new Pokémon-GX cards, 15 trainer cards, and over 75 shiny Pokémon.",
-    "era": "Seventh Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sun & Moon–Cosmic Eclipse",
-    "release_date_us": "November 1, 2019",
-    "era": "Seventh Generation Sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sword & Shield",
-    "release_date_us": "February 7, 2020",
-    "era": "Eighth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sword & Shield–Rebel Clash",
-    "release_date_us": "May 1, 2020",
-    "era": "Eighth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sword & Shield–Darkness Ablaze",
-    "release_date_us": "August 14, 2020",
-    "era": "Eighth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Champion's Path",
-    "release_date_us": "Champion's Pathis the first special expansion set in theSword & Shieldseries. The first boxes for this set were released on September 25, 2020. Champion's Path contains over 70 cards with 15 Pokémon V cards, three Pokémon VMAX cards, and 19 trainer cards. Pokémon announced a special energy card earlier on, but this seems to not be the case.",
-    "era": "Eighth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sword & Shield–Vivid Voltage",
-    "release_date_us": "November 13, 2020",
-    "era": "Eighth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Shining Fates",
-    "release_date_us": "Shining Fatesis the second special expansion set from theSword & Shieldseries.  This set was released on February 19, 2021.  Shining Fates contains over 190 cards including more than 30 Pokémon V and VMAX cards along with more than 100 shiny Pokémon. The set was popular, but not as popular as its predecessor Hidden Fates. The set is best known for the shiny Charizard VMAX card included in the set's subset, the Shiny Vault, the most popular part of the set.",
-    "era": "Eighth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sword & Shield–Battle Styles",
-    "release_date_us": "The fifth expansion set fromSword & Shieldseries, it contains over 160 cards. It introduced a recurring mechanic called “Battle Styles,” which feature Single Strike and Rapid Strike styles, with emphasis on strength and chance, respectively. It is the first standard set with the E regulation mark. On March 6, 2021, the Pokémon TCG:Sword & Shield—Battle Styles Build & Battle Boxwas available at select retailers before the release date.",
-    "era": "Eighth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sword & Shield–Chilling Reign",
-    "release_date_us": "June 18, 2021",
-    "era": "Eighth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sword & Shield–Evolving Skies",
-    "release_date_us": "August 27, 2021",
-    "era": "Eighth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Celebrations",
-    "release_date_us": "Celebrationsis the third special expansion set in theSword & Shield series, and was released October 8, 2021. The set celebrates the 25th anniversary of the Pokémon franchise, and features lots of Legendary Pokémon, as well as V and VMAX printings of Surfing and Flying Pikachu. It features 25 new cards, as well as 25 reprints of cards from past series. Each Celebrations pack only contains four cards though, due to the set's incredibly small amount of cards.",
-    "era": "Eighth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sword & Shield–Fusion Strike",
-    "release_date_us": "November 12, 2021",
-    "era": "Eighth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sword & Shield–Brilliant Stars",
-    "release_date_us": "February 25, 2022",
-    "era": "Eighth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sword & Shield–Astral Radiance",
-    "release_date_us": "May 27, 2022",
-    "era": "Eighth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Pokémon GO",
-    "release_date_us": "Pokémon GOis the fourth special expansion set in the Sword & Shield series, and was released on July 1, 2022. Pokémon GO contains 78 cards in the main set, including 3 Radiant Pokémon, 13 Pokémon V cards, 2 Pokémon VMAX cards, 5 Pokémon VSTAR (some of those being alternate art cards). Pokémon GO is based on the incredibly popular mobile game of the same name.",
-    "era": "Eighth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sword & Shield–Lost Origin",
-    "release_date_us": "September 9, 2022",
-    "era": "Eighth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Sword & Shield–Silver Tempest",
-    "release_date_us": "November 11, 2022",
-    "era": "Eighth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Crown Zenith",
-    "release_date_us": "Crown Zenithis the fifth special expansion from theSword & Shieldseries, and was released on January 20, 2023, and is the final set of the Sword and Shield era. It contains 240 cards, with 70 of those being special art rares in a subset called the \"Galarian Gallery.\"",
-    "era": "Eighth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Scarlet & Violet",
-    "release_date_us": "March 31, 2023",
-    "era": "Ninth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Scarlet & Violet–Paldea Evolved",
-    "release_date_us": "June 6, 2023",
-    "era": "Ninth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Scarlet & Violet–Obsidian Flames",
-    "release_date_us": "August 11, 2023",
-    "era": "Ninth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Scarlet & Violet–151",
-    "release_date_us": "September 22, 2023",
-    "era": "Ninth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Scarlet & Violet–Paradox Rift",
-    "release_date_us": "November 3, 2023",
-    "era": "Ninth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Scarlet & Violet–Paldean Fates",
-    "release_date_us": "January 26, 2024",
-    "era": "Ninth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Scarlet & Violet–Temporal Forces",
-    "release_date_us": "Scarlet & Violet–Temporal Forcesis the fifth expansion set in theScarlet & Violetseries and continues to concept of Ancient and Future Pokémon, including respective Trainer cards. ACE SPEC cards, originally introduced in the fifth-generation setBlack & White: Boundaries Crossedin 2012, make their return to the Pokémon Trading Card Game. It is the first set with the H regulation mark.",
-    "era": "Ninth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Scarlet & Violet–Twilight Masquerade",
-    "release_date_us": "May 24, 2024",
-    "era": "Ninth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Scarlet & Violet–Shrouded Fable",
-    "release_date_us": "August 2, 2024",
-    "era": "Ninth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Scarlet & Violet–Stellar Crown",
-    "release_date_us": "September 13, 2024",
-    "era": "Ninth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Scarlet & Violet–Surging Sparks",
-    "release_date_us": "November 8, 2024",
-    "era": "Ninth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Scarlet & Violet–Prismatic Evolution",
-    "release_date_us": "January 17, 2025",
-    "era": "Ninth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Scarlet & Violet–Journey Together",
-    "release_date_us": "March 28, 2025",
-    "era": "Ninth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Scarlet & Violet–Destined Rivals",
-    "release_date_us": "May 30, 2025",
-    "era": "Ninth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Scarlet & Violet–Black Bolt and White Flare",
-    "release_date_us": "Scarlet & Violet–Black Bolt and White Flareis the fifth special expansion set in the Scarlet & Violet series. The expansion, released on July 18, 2025, features a new rarity called Black White Rare (BWR). As of August 2025, three cards are BWRs. Both sets feature Victini 171/086, Black Bolt features Zekrom ex 172/086, and White Flare features Reshiram ex 173/086.",
-    "era": "Ninth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Mega Evolution",
-    "release_date_us": "September 26, 2025",
-    "era": "Tenth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Mega Evolution–Phantasmal Flames",
-    "release_date_us": "November 14, 2025",
-    "era": "Tenth generation sets",
-    "type": "Table-based"
-  },
-  {
-    "series_name_us": "Mega Evolution–Ascended Heroes",
-    "release_date_us": "January 30, 2026",
-    "era": "Tenth generation sets",
-    "type": "Table-based"
+    "set_id": "base1",
+    "set_name_us": "Base Set",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/base/base1/logo.png",
+    "symbol_url": null,
+    "card_count": 102,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "base2",
+    "set_name_us": "Jungle",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/base/base2/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/base/base2/symbol.png",
+    "card_count": 64,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "basep",
+    "set_name_us": "Wizards Black Star Promos",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/base/basep/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/base/basep/symbol.png",
+    "card_count": 53,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "wp",
+    "set_name_us": "W Promotional",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 7,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "base3",
+    "set_name_us": "Fossil",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/base/base3/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/base/base3/symbol.png",
+    "card_count": 62,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "jumbo",
+    "set_name_us": "Jumbo cards",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 160,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "base4",
+    "set_name_us": "Base Set 2",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/base/base4/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/base/base4/symbol.png",
+    "card_count": 130,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "base5",
+    "set_name_us": "Team Rocket",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/base/base5/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/base/base5/symbol.png",
+    "card_count": 83,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "gym1",
+    "set_name_us": "Gym Heroes",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/gym/gym1/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/gym/gym1/symbol.png",
+    "card_count": 132,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "gym2",
+    "set_name_us": "Gym Challenge",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/gym/gym2/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/gym/gym2/symbol.png",
+    "card_count": 132,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "neo1",
+    "set_name_us": "Neo Genesis",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/neo/neo1/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/neo/neo1/symbol.png",
+    "card_count": 111,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "neo2",
+    "set_name_us": "Neo Discovery",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/neo/neo2/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/neo/neo2/symbol.png",
+    "card_count": 75,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "si1",
+    "set_name_us": "Southern Islands",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/neo/si1/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/neo/si1/symbol.png",
+    "card_count": 18,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "neo3",
+    "set_name_us": "Neo Revelation",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/neo/neo3/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/neo/neo3/symbol.png",
+    "card_count": 66,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "neo4",
+    "set_name_us": "Neo Destiny",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/neo/neo4/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/neo/neo4/symbol.png",
+    "card_count": 113,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "lc",
+    "set_name_us": "Legendary Collection",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/lc/lc/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/lc/lc/symbol.png",
+    "card_count": 110,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sp",
+    "set_name_us": "Sample",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/ecard/sp/symbol.png",
+    "card_count": 10,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "ecard1",
+    "set_name_us": "Expedition Base Set",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/ecard/ecard1/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/ecard/ecard1/symbol.png",
+    "card_count": 165,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "bog",
+    "set_name_us": "Best of game",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/ecard/bog/symbol.png",
+    "card_count": 9,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "ecard2",
+    "set_name_us": "Aquapolis",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/ecard/ecard2/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/ecard/ecard2/symbol.png",
+    "card_count": 186,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "ecard3",
+    "set_name_us": "Skyridge",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/ecard/ecard3/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/ecard/ecard3/symbol.png",
+    "card_count": 182,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "ex1",
+    "set_name_us": "Ruby & Sapphire",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/ex/ex1/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/ex/ex1/symbol.png",
+    "card_count": 109,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "ex2",
+    "set_name_us": "Sandstorm",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/ex/ex2/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/ex/ex2/symbol.png",
+    "card_count": 100,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "np",
+    "set_name_us": "Nintendo Black Star Promos",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/pop/np/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/pop/np/symbol.png",
+    "card_count": 40,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "ex3",
+    "set_name_us": "Dragon",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/ex/ex3/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/ex/ex3/symbol.png",
+    "card_count": 100,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "ex4",
+    "set_name_us": "Team Magma vs Team Aqua",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/ex/ex4/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/ex/ex4/symbol.png",
+    "card_count": 97,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "ex5",
+    "set_name_us": "Hidden Legends",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/ex/ex5/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/ex/ex5/symbol.png",
+    "card_count": 102,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "ex5.5",
+    "set_name_us": "Poké Card Creator Pack",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 5,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-ex-latio",
+    "set_name_us": "EX trainer Kit (Latios)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-ex-latio/symbol.png",
+    "card_count": 10,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-ex-latia",
+    "set_name_us": "EX trainer Kit (Latias)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-ex-latia/symbol.png",
+    "card_count": 10,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "ex6",
+    "set_name_us": "FireRed & LeafGreen",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/ex/ex6/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/ex/ex6/symbol.png",
+    "card_count": 116,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "pop1",
+    "set_name_us": "POP Series 1",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/pop/pop1/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/pop/pop1/symbol.png",
+    "card_count": 17,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "ex7",
+    "set_name_us": "Team Rocket Returns",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/ex/ex7/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/ex/ex7/symbol.png",
+    "card_count": 111,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "ex8",
+    "set_name_us": "Deoxys",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/ex/ex8/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/ex/ex8/symbol.png",
+    "card_count": 108,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "ex9",
+    "set_name_us": "Emerald",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/ex/ex9/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/ex/ex9/symbol.png",
+    "card_count": 107,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "pop2",
+    "set_name_us": "POP Series 2",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/pop/pop2/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/pop/pop2/symbol.png",
+    "card_count": 17,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "exu",
+    "set_name_us": "Unseen Forces Unown Collection",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 28,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "ex10",
+    "set_name_us": "Unseen Forces",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/ex/ex10/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/ex/ex10/symbol.png",
+    "card_count": 117,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "ex11",
+    "set_name_us": "Delta Species",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/ex/ex11/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/ex/ex11/symbol.png",
+    "card_count": 114,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "ex12",
+    "set_name_us": "Legend Maker",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/ex/ex12/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/ex/ex12/symbol.png",
+    "card_count": 93,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-ex-p",
+    "set_name_us": "EX trainer Kit 2 (Plusle)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-ex-p/symbol.png",
+    "card_count": 12,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-ex-m",
+    "set_name_us": "EX trainer Kit 2 (Minun)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 12,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "pop3",
+    "set_name_us": "POP Series 3",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/pop/pop3/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/pop/pop3/symbol.png",
+    "card_count": 17,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "ex13",
+    "set_name_us": "Holon Phantoms",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/ex/ex13/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/ex/ex13/symbol.png",
+    "card_count": 111,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "pop4",
+    "set_name_us": "POP Series 4",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/pop/pop4/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/pop/pop4/symbol.png",
+    "card_count": 17,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "ex14",
+    "set_name_us": "Crystal Guardians",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/ex/ex14/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/ex/ex14/symbol.png",
+    "card_count": 100,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "ex15",
+    "set_name_us": "Dragon Frontiers",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/ex/ex15/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/ex/ex15/symbol.png",
+    "card_count": 101,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "ex16",
+    "set_name_us": "Power Keepers",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/ex/ex16/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/ex/ex16/symbol.png",
+    "card_count": 108,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "pop5",
+    "set_name_us": "POP Series 5",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/pop/pop5/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/pop/pop5/symbol.png",
+    "card_count": 17,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "dp1",
+    "set_name_us": "Diamond & Pearl",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/dp/dp1/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/dp/dp1/symbol.png",
+    "card_count": 130,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "dpp",
+    "set_name_us": "DP Black Star Promos",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/dp/dpp/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/dp/dpp/symbol.png",
+    "card_count": 56,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "dp2",
+    "set_name_us": "Mysterious Treasures",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/dp/dp2/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/dp/dp2/symbol.png",
+    "card_count": 124,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "pop6",
+    "set_name_us": "POP Series 6",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/pop/pop6/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/pop/pop6/symbol.png",
+    "card_count": 17,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-dp-l",
+    "set_name_us": "DP trainer Kit (Lucario)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-dp-l/symbol.png",
+    "card_count": 11,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-dp-m",
+    "set_name_us": "DP trainer Kit (Manaphy)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-dp-m/symbol.png",
+    "card_count": 12,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "dp3",
+    "set_name_us": "Secret Wonders",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/dp/dp3/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/dp/dp3/symbol.png",
+    "card_count": 132,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "dp4",
+    "set_name_us": "Great Encounters",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/dp/dp4/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/dp/dp4/symbol.png",
+    "card_count": 106,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "pop7",
+    "set_name_us": "POP Series 7",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/pop/pop7/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/pop/pop7/symbol.png",
+    "card_count": 17,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "dp5",
+    "set_name_us": "Majestic Dawn",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/dp/dp5/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/dp/dp5/symbol.png",
+    "card_count": 100,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "dp6",
+    "set_name_us": "Legends Awakened",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/dp/dp6/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/dp/dp6/symbol.png",
+    "card_count": 146,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "pop8",
+    "set_name_us": "POP Series 8",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/pop/pop8/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/pop/pop8/symbol.png",
+    "card_count": 17,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "dp7",
+    "set_name_us": "Stormfront",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/dp/dp7/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/dp/dp7/symbol.png",
+    "card_count": 106,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "pl1",
+    "set_name_us": "Platinum",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/pl/pl1/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/pl/pl1/symbol.png",
+    "card_count": 133,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "pop9",
+    "set_name_us": "POP Series 9",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/pop/pop9/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/pop/pop9/symbol.png",
+    "card_count": 17,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "pl2",
+    "set_name_us": "Rising Rivals",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/pl/pl2/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/pl/pl2/symbol.png",
+    "card_count": 120,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "pl3",
+    "set_name_us": "Supreme Victors",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/pl/pl3/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/pl/pl3/symbol.png",
+    "card_count": 153,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "pl4",
+    "set_name_us": "Arceus",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/pl/pl4/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/pl/pl4/symbol.png",
+    "card_count": 111,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "ru1",
+    "set_name_us": "Pokémon Rumble",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/pl/ru1/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/pl/ru1/symbol.png",
+    "card_count": 16,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "hgss1",
+    "set_name_us": "HeartGold SoulSilver",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/hgss/hgss1/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/hgss/hgss1/symbol.png",
+    "card_count": 124,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "hgssp",
+    "set_name_us": "HGSS Black Star Promos",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/hgss/hgssp/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/hgss/hgssp/symbol.png",
+    "card_count": 25,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-hs-g",
+    "set_name_us": "HS trainer Kit (Gyarados)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-hs-g/symbol.png",
+    "card_count": 30,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-hs-r",
+    "set_name_us": "HS trainer Kit (Raichu)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-hs-r/symbol.png",
+    "card_count": 30,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "hgss2",
+    "set_name_us": "Unleashed",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/hgss/hgss2/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/hgss/hgss2/symbol.png",
+    "card_count": 96,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "hgss3",
+    "set_name_us": "Undaunted",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/hgss/hgss3/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/hgss/hgss3/symbol.png",
+    "card_count": 91,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "hgss4",
+    "set_name_us": "Triumphant",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/hgss/hgss4/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/hgss/hgss4/symbol.png",
+    "card_count": 103,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "col1",
+    "set_name_us": "Call of Legends",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/col/col1/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/col/col1/symbol.png",
+    "card_count": 106,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "bw1",
+    "set_name_us": "Black & White",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/bw/bw1/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/bw/bw1/symbol.png",
+    "card_count": 115,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "bwp",
+    "set_name_us": "BW Black Star Promos",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/bw/bwp/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/bw/bwp/symbol.png",
+    "card_count": 101,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "2011bw",
+    "set_name_us": "Macdonald's Collection 2011",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 12,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "bw2",
+    "set_name_us": "Emerging Powers",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/bw/bw2/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/bw/bw2/symbol.png",
+    "card_count": 98,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-bw-z",
+    "set_name_us": "BW trainer Kit (Zoroark)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 30,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-bw-e",
+    "set_name_us": "BW trainer Kit (Excadrill)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 30,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "bw3",
+    "set_name_us": "Noble Victories",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/bw/bw3/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/bw/bw3/symbol.png",
+    "card_count": 102,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "bw4",
+    "set_name_us": "Next Destinies",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/bw/bw4/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/bw/bw4/symbol.png",
+    "card_count": 103,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "bw5",
+    "set_name_us": "Dark Explorers",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/bw/bw5/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/bw/bw5/symbol.png",
+    "card_count": 111,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "2012bw",
+    "set_name_us": "Macdonald's Collection 2012",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 12,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "bw6",
+    "set_name_us": "Dragons Exalted",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/bw/bw6/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/bw/bw6/symbol.png",
+    "card_count": 128,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "dv1",
+    "set_name_us": "Dragon Vault",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/bw/dv1/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/bw/dv1/symbol.png",
+    "card_count": 21,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "bw7",
+    "set_name_us": "Boundaries Crossed",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/bw/bw7/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/bw/bw7/symbol.png",
+    "card_count": 153,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "bw8",
+    "set_name_us": "Plasma Storm",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/bw/bw8/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/bw/bw8/symbol.png",
+    "card_count": 138,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "bw9",
+    "set_name_us": "Plasma Freeze",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/bw/bw9/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/bw/bw9/symbol.png",
+    "card_count": 122,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "bw10",
+    "set_name_us": "Plasma Blast",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/bw/bw10/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/bw/bw10/symbol.png",
+    "card_count": 105,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "xyp",
+    "set_name_us": "XY Black Star Promos",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/xy/xyp/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/xy/xyp/symbol.png",
+    "card_count": 216,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "rc",
+    "set_name_us": "Radiant Collection",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 25,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "bw11",
+    "set_name_us": "Legendary Treasures",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/bw/bw11/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/bw/bw11/symbol.png",
+    "card_count": 140,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "xy0",
+    "set_name_us": "Kalos Starter Set",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/xy/xy0/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/xy/xy0/symbol.png",
+    "card_count": 39,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "xy1",
+    "set_name_us": "XY",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/xy/xy1/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/xy/xy1/symbol.png",
+    "card_count": 146,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "xya",
+    "set_name_us": "Yello A Alternate",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 6,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-xy-sy",
+    "set_name_us": "XY trainer Kit (Sylveon)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-xy-sy/symbol.png",
+    "card_count": 30,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-xy-n",
+    "set_name_us": "XY trainer Kit (Noivern)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-xy-n/symbol.png",
+    "card_count": 30,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "xy2",
+    "set_name_us": "Flashfire",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/xy/xy2/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/xy/xy2/symbol.png",
+    "card_count": 110,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "2014xy",
+    "set_name_us": "Macdonald's Collection 2014",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 12,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "xy3",
+    "set_name_us": "Furious Fists",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/xy/xy3/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/xy/xy3/symbol.png",
+    "card_count": 114,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-xy-b",
+    "set_name_us": "XY trainer Kit (Bisharp)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-xy-b/symbol.png",
+    "card_count": 30,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-xy-w",
+    "set_name_us": "XY trainer Kit (Wigglytuff)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-xy-w/symbol.png",
+    "card_count": 30,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "xy4",
+    "set_name_us": "Phantom Forces",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/xy/xy4/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/xy/xy4/symbol.png",
+    "card_count": 124,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "xy5",
+    "set_name_us": "Primal Clash",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/xy/xy5/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/xy/xy5/symbol.png",
+    "card_count": 164,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "dc1",
+    "set_name_us": "Double Crisis",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/xy/dc1/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/xy/dc1/symbol.png",
+    "card_count": 34,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-xy-latia",
+    "set_name_us": "XY trainer Kit (Latias)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-xy-latia/symbol.png",
+    "card_count": 30,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-xy-latio",
+    "set_name_us": "XY trainer Kit (Latios)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-xy-latio/symbol.png",
+    "card_count": 30,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "xy6",
+    "set_name_us": "Roaring Skies",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/xy/xy6/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/xy/xy6/symbol.png",
+    "card_count": 112,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "xy7",
+    "set_name_us": "Ancient Origins",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/xy/xy7/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/xy/xy7/symbol.png",
+    "card_count": 101,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "xy8",
+    "set_name_us": "BREAKthrough",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/xy/xy8/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/xy/xy8/symbol.png",
+    "card_count": 165,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "2015xy",
+    "set_name_us": "Macdonald's Collection 2015",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 12,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "xy9",
+    "set_name_us": "BREAKpoint",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/xy/xy9/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/xy/xy9/symbol.png",
+    "card_count": 126,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "g1",
+    "set_name_us": "Generations",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/xy/g1/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/xy/g1/symbol.png",
+    "card_count": 117,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-xy-p",
+    "set_name_us": "XY trainer Kit (Pikachu Libre)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol.png",
+    "card_count": 30,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-xy-su",
+    "set_name_us": "XY trainer Kit (Suicune)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-xy-su/symbol.png",
+    "card_count": 30,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "xy10",
+    "set_name_us": "Fates Collide",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/xy/xy10/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/xy/xy10/symbol.png",
+    "card_count": 129,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "xy11",
+    "set_name_us": "Steam Siege",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/xy/xy11/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/xy/xy11/symbol.png",
+    "card_count": 116,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "2016xy",
+    "set_name_us": "Macdonald's Collection 2016",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 12,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "xy12",
+    "set_name_us": "Evolutions",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/xy/xy12/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/xy/xy12/symbol.png",
+    "card_count": 113,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sm1",
+    "set_name_us": "Sun & Moon",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sm/sm1/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sm/sm1/symbol.png",
+    "card_count": 172,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "smp",
+    "set_name_us": "SM Black Star Promos",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sm/smp/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sm/smp/symbol.png",
+    "card_count": 244,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-sm-l",
+    "set_name_us": "SM trainer Kit (Lycanroc)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-sm-l/symbol.png",
+    "card_count": 30,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-sm-r",
+    "set_name_us": "SM trainer Kit (Alolan Raichu)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-sm-r/symbol.png",
+    "card_count": 30,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sm2",
+    "set_name_us": "Guardians Rising",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sm/sm2/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sm/sm2/symbol.png",
+    "card_count": 169,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "2017sm",
+    "set_name_us": "Macdonald's Collection 2017",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 12,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sm3",
+    "set_name_us": "Burning Shadows",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sm/sm3/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sm/sm3/symbol.png",
+    "card_count": 169,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sm3.5",
+    "set_name_us": "Shining Legends",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 78,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sm4",
+    "set_name_us": "Crimson Invasion",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sm/sm4/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sm/sm4/symbol.png",
+    "card_count": 125,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sm5",
+    "set_name_us": "Ultra Prism",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sm/sm5/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sm/sm5/symbol.png",
+    "card_count": 173,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sm6",
+    "set_name_us": "Forbidden Light",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sm/sm6/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sm/sm6/symbol.png",
+    "card_count": 146,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sm7",
+    "set_name_us": "Celestial Storm",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sm/sm7/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sm/sm7/symbol.png",
+    "card_count": 183,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sm7.5",
+    "set_name_us": "Dragon Majesty",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 78,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "2018sm",
+    "set_name_us": "Macdonald's Collection 2018",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 12,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sm8",
+    "set_name_us": "Lost Thunder",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sm/sm8/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sm/sm8/symbol.png",
+    "card_count": 236,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sm9",
+    "set_name_us": "Team Up",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sm/sm9/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sm/sm9/symbol.png",
+    "card_count": 196,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "det1",
+    "set_name_us": "Detective Pikachu",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sm/det1/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sm/det1/symbol.png",
+    "card_count": 18,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sm10",
+    "set_name_us": "Unbroken Bonds",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sm/sm10/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sm/sm10/symbol.png",
+    "card_count": 234,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sm11",
+    "set_name_us": "Unified Minds",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sm/sm11/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sm/sm11/symbol.png",
+    "card_count": 258,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sm115",
+    "set_name_us": "Hidden Fates",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sm/sm115/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sm/sm115/symbol.png",
+    "card_count": 69,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sma",
+    "set_name_us": "Yellow A Alternate",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/sm/sma/symbol.png",
+    "card_count": 94,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "2019sm",
+    "set_name_us": "Macdonald's Collection 2019",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 12,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sm12",
+    "set_name_us": "Cosmic Eclipse",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sm/sm12/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sm/sm12/symbol.png",
+    "card_count": 271,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swshp",
+    "set_name_us": "SWSH Black Star Promos",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/swsh/swshp/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/swsh/swshp/symbol.png",
+    "card_count": 287,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swsh1",
+    "set_name_us": "Sword & Shield",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/swsh/swsh1/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/swsh/swsh1/symbol.png",
+    "card_count": 216,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swsh2",
+    "set_name_us": "Rebel Clash",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/swsh/swsh2/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/swsh/swsh2/symbol.png",
+    "card_count": 209,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swsh3",
+    "set_name_us": "Darkness Ablaze",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/swsh/swsh3/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/swsh/swsh3/symbol.png",
+    "card_count": 201,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "fut2020",
+    "set_name_us": "Pokémon Futsal 2020",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/swsh/fut2020/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/swsh/fut2020/symbol.png",
+    "card_count": 5,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swsh3.5",
+    "set_name_us": "Champion's Path",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/swsh/swsh3.5/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/swsh/swsh3.5/symbol.png",
+    "card_count": 80,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swsh4",
+    "set_name_us": "Vivid Voltage",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/swsh/swsh4/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/swsh/swsh4/symbol.png",
+    "card_count": 203,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "2021swsh",
+    "set_name_us": "Macdonald's Collection 2021",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol.png",
+    "card_count": 25,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swsh4.5",
+    "set_name_us": "Shining Fates",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/swsh/swsh4.5/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/swsh/swsh4.5/symbol.png",
+    "card_count": 195,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swsh5",
+    "set_name_us": "Battle Styles",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/swsh/swsh5/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/swsh/swsh5/symbol.png",
+    "card_count": 183,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swsh6",
+    "set_name_us": "Chilling Reign",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/swsh/swsh6/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/swsh/swsh6/symbol.png",
+    "card_count": 233,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swsh7",
+    "set_name_us": "Evolving Skies",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/swsh/swsh7/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/swsh/swsh7/symbol.png",
+    "card_count": 237,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "cel25",
+    "set_name_us": "Celebrations",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/swsh/cel25/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/swsh/cel25/symbol.png",
+    "card_count": 51,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swsh8",
+    "set_name_us": "Fusion Strike",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/swsh/swsh8/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/swsh/swsh8/symbol.png",
+    "card_count": 284,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swsh9",
+    "set_name_us": "Brilliant Stars",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/swsh/swsh9/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol.png",
+    "card_count": 216,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swsh10",
+    "set_name_us": "Astral Radiance",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/swsh/swsh10/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/swsh/swsh10/symbol.png",
+    "card_count": 246,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swsh10.5",
+    "set_name_us": "Pokémon GO",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/swsh/swsh10.5/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/swsh/swsh10.5/symbol.png",
+    "card_count": 88,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swsh11",
+    "set_name_us": "Lost Origin",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/swsh/swsh11/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/swsh/swsh11/symbol.png",
+    "card_count": 247,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swsh12",
+    "set_name_us": "Silver Tempest",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/swsh/swsh12/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/swsh/swsh12/symbol.png",
+    "card_count": 245,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swsh12.5",
+    "set_name_us": "Crown Zenith",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol.png",
+    "card_count": 230,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "svp",
+    "set_name_us": "SVP Black Star Promos",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 219,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sv01",
+    "set_name_us": "Scarlet & Violet",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sv/sv01/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sv/sv01/symbol.png",
+    "card_count": 258,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sv02",
+    "set_name_us": "Paldea Evolved",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sv/sv02/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sv/sv02/symbol.png",
+    "card_count": 279,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sv03",
+    "set_name_us": "Obsidian Flames",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sv/sv03/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sv/sv03/symbol.png",
+    "card_count": 230,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sv03.5",
+    "set_name_us": "151",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sv/sv03.5/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sv/sv03.5/symbol.png",
+    "card_count": 207,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sv04",
+    "set_name_us": "Paradox Rift",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sv/sv04/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sv/sv04/symbol.png",
+    "card_count": 266,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sv04.5",
+    "set_name_us": "Paldean Fates",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sv/sv04.5/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sv/sv04.5/symbol.png",
+    "card_count": 245,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sv05",
+    "set_name_us": "Temporal Forces",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/sv/sv05/symbol.png",
+    "card_count": 218,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sv06",
+    "set_name_us": "Twilight Masquerade",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sv/sv06/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sv/sv06/symbol.png",
+    "card_count": 226,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sv06.5",
+    "set_name_us": "Shrouded Fable",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sv/sv06.5/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sv/sv06.5/symbol.png",
+    "card_count": 99,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sv07",
+    "set_name_us": "Stellar Crown",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sv/sv07/logo.png",
+    "symbol_url": null,
+    "card_count": 175,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "A1",
+    "set_name_us": "Genetic Apex",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/tcgp/A1/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/tcgp/A1/symbol.png",
+    "card_count": 286,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "P-A",
+    "set_name_us": "Promos-A",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/tcgp/P-A/logo.png",
+    "symbol_url": null,
+    "card_count": 100,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sv08",
+    "set_name_us": "Surging Sparks",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sv/sv08/logo.png",
+    "symbol_url": null,
+    "card_count": 252,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "A1a",
+    "set_name_us": "Mythical Island",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/tcgp/A1a/logo.png",
+    "symbol_url": null,
+    "card_count": 86,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sv08.5",
+    "set_name_us": "Prismatic Evolutions",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sv/sv08.5/logo.png",
+    "symbol_url": null,
+    "card_count": 180,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "A2",
+    "set_name_us": "Space-Time Smackdown",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/tcgp/A2/logo.png",
+    "symbol_url": null,
+    "card_count": 207,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "A2a",
+    "set_name_us": "Triumphant Light",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/tcgp/A2a/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/tcgp/A2a/symbol.png",
+    "card_count": 96,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "A2b",
+    "set_name_us": "Shining Revelry",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/tcgp/A2b/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/tcgp/A2b/symbol.png",
+    "card_count": 111,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sv09",
+    "set_name_us": "Journey Together",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sv/sv09/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sv/sv09/symbol.png",
+    "card_count": 190,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "A3",
+    "set_name_us": "Celestial Guardians",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/tcgp/A3/logo.png",
+    "symbol_url": null,
+    "card_count": 239,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "A3a",
+    "set_name_us": "Extradimensional Crisis",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 103,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sv10",
+    "set_name_us": "Destined Rivals",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sv/sv10/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sv/sv10/symbol.png",
+    "card_count": 244,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "A3b",
+    "set_name_us": "Eevee Grove",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 107,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sv10.5b",
+    "set_name_us": "Black Bolt",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sv/sv10.5b/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sv/sv10.5b/symbol.png",
+    "card_count": 172,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sv10.5w",
+    "set_name_us": "White Flare",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sv/sv10.5w/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sv/sv10.5w/symbol.png",
+    "card_count": 173,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "A4",
+    "set_name_us": "Wisdom of Sea and Sky",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/tcgp/A4/logo.png",
+    "symbol_url": null,
+    "card_count": 241,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "A4a",
+    "set_name_us": "Secluded Springs",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/tcgp/A4a/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/tcgp/A4a/symbol.png",
+    "card_count": 105,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "me01",
+    "set_name_us": "Mega Evolution",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/me/me01/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/me/me01/symbol.png",
+    "card_count": 188,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "mep",
+    "set_name_us": "MEP Black Star Promos",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 10,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "B1",
+    "set_name_us": "Mega Rising",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/tcgp/B1/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/tcgp/B1/symbol.png",
+    "card_count": 331,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "me02",
+    "set_name_us": "Phantasmal Flames",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/me/me02/logo.png",
+    "symbol_url": null,
+    "card_count": 130,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "B1a",
+    "set_name_us": "Crimson Blaze",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 103,
+    "type": "official-set-api"
   }
 ]

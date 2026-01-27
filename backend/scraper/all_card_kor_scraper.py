@@ -2,9 +2,7 @@ import requests
 import json
 import time
 
-# ------------------------------
 # API URL 정의
-# ------------------------------
 SET_LIST_URL = "https://cardmon-reboot1.du.r.appspot.com/pg-poke-load-setlist"
 CARD_LIST_URL = "https://cardmon-reboot1.du.r.appspot.com/pg-poke-load-cardinfo-one-setname"
 
@@ -12,9 +10,7 @@ HEADERS = {
     "Content-Type": "application/json"
 }
 
-# ------------------------------
 # 세트 목록 가져오기
-# ------------------------------
 def fetch_set_list():
     print("📌 세트 목록 가져오는 중...")
 
@@ -27,9 +23,7 @@ def fetch_set_list():
     return data.get("setList", data)   # 안전하게 처리
 
 
-# ------------------------------
 # 세트명으로 카드 목록 가져오기
-# ------------------------------
 def fetch_cards_by_set(set_name):
     payload = {
         "setName": set_name,
@@ -50,9 +44,7 @@ def fetch_cards_by_set(set_name):
         return []
 
 
-# ------------------------------
 # 전체 카드 스크래핑
-# ------------------------------
 def scrape_all_korean_cards():
     set_list = fetch_set_list()
     print(f"📌 총 세트 수: {len(set_list)}")
@@ -82,9 +74,7 @@ def scrape_all_korean_cards():
     return all_cards
 
 
-# ------------------------------
 # 실행 및 저장
-# ------------------------------
 def main():
     cards = scrape_all_korean_cards()
 
