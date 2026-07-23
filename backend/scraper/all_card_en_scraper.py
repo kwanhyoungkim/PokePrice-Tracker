@@ -30,6 +30,7 @@ import time
 import requests
 
 from tcg_pocket_filter import is_tcg_pocket_set
+from tcgdex_helpers import collect_all_card_ids
 
 # 설정
 TCGDEX_EN_URL = "https://api.tcgdex.net/v2/en"
@@ -48,16 +49,16 @@ def fetch_all_english_cards():
     print("🇺🇸 영문 포켓몬 카드 전체 데이터 수집 시작")
     print("=" * 70)
 
-    print("\n🔍 전체 카드 리스트를 불러오는 중...")
+    # ⚠️ 예전에는 GET /cards (전체 요약 목록) 한 번으로 끝냈는데, 이 API가 신규 시리즈를
+    #    늦게 반영하는 문제가 있어 series -> sets -> cards 로 직접 순회해서 모은다.
+    print("\n🔍 시리즈/세트를 순회하며 전체 카드 ID를 모으는 중...")
     try:
-        response = requests.get(f"{TCGDEX_EN_URL}/cards", timeout=30)
-        response.raise_for_status()
-        summary_list = response.json()
+        summary_ids = collect_all_card_ids(TCGDEX_EN_URL)
     except Exception as e:
         print(f"❌ 목록 호출 실패: {e}")
         return []
 
-    total_count = len(summary_list)
+    total_count = len(summary_ids)
     print(f"✅ 총 {total_count:,}개의 카드 ID를 확인했습니다.")
     print("-" * 70)
 
@@ -65,8 +66,7 @@ def fetch_all_english_cards():
     skipped_pocket = 0
     failed_ids = []
 
-    for idx, card in enumerate(summary_list, start=1):
-        card_id = card["id"]
+    for idx, card_id in enumerate(summary_ids, start=1):
 
         try:
             detail_res = requests.get(f"{TCGDEX_EN_URL}/cards/{card_id}", timeout=10)

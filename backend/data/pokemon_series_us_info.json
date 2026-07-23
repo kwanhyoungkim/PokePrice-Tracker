@@ -1,5 +1,14 @@
 [
   {
+    "set_id": "miscp",
+    "set_name_us": "Miscellaneous Promos",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 1,
+    "type": "official-set-api"
+  },
+  {
     "set_id": "base1",
     "set_name_us": "Base Set",
     "series_name_us": null,
@@ -176,7 +185,7 @@
     "series_name_us": null,
     "logo_url": "https://assets.tcgdex.net/en/ecard/ecard2/logo.png",
     "symbol_url": "https://assets.tcgdex.net/univ/ecard/ecard2/symbol.png",
-    "card_count": 186,
+    "card_count": 185,
     "type": "official-set-api"
   },
   {
@@ -243,12 +252,12 @@
     "type": "official-set-api"
   },
   {
-    "set_id": "ex5.5",
-    "set_name_us": "Poké Card Creator Pack",
+    "set_id": "tk-ex-latia",
+    "set_name_us": "EX trainer Kit (Latias)",
     "series_name_us": null,
     "logo_url": null,
-    "symbol_url": null,
-    "card_count": 5,
+    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-ex-latia/symbol.png",
+    "card_count": 10,
     "type": "official-set-api"
   },
   {
@@ -261,21 +270,12 @@
     "type": "official-set-api"
   },
   {
-    "set_id": "tk-ex-latia",
-    "set_name_us": "EX trainer Kit (Latias)",
+    "set_id": "ex5.5",
+    "set_name_us": "Poké Card Creator Pack",
     "series_name_us": null,
     "logo_url": null,
-    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-ex-latia/symbol.png",
-    "card_count": 10,
-    "type": "official-set-api"
-  },
-  {
-    "set_id": "ex6",
-    "set_name_us": "FireRed & LeafGreen",
-    "series_name_us": null,
-    "logo_url": "https://assets.tcgdex.net/en/ex/ex6/logo.png",
-    "symbol_url": "https://assets.tcgdex.net/univ/ex/ex6/symbol.png",
-    "card_count": 116,
+    "symbol_url": null,
+    "card_count": 5,
     "type": "official-set-api"
   },
   {
@@ -285,6 +285,15 @@
     "logo_url": "https://assets.tcgdex.net/en/pop/pop1/logo.png",
     "symbol_url": "https://assets.tcgdex.net/univ/pop/pop1/symbol.png",
     "card_count": 17,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "ex6",
+    "set_name_us": "FireRed & LeafGreen",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/ex/ex6/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/ex/ex6/symbol.png",
+    "card_count": 116,
     "type": "official-set-api"
   },
   {
@@ -324,21 +333,21 @@
     "type": "official-set-api"
   },
   {
-    "set_id": "exu",
-    "set_name_us": "Unseen Forces Unown Collection",
-    "series_name_us": null,
-    "logo_url": null,
-    "symbol_url": null,
-    "card_count": 28,
-    "type": "official-set-api"
-  },
-  {
     "set_id": "ex10",
     "set_name_us": "Unseen Forces",
     "series_name_us": null,
     "logo_url": "https://assets.tcgdex.net/en/ex/ex10/logo.png",
     "symbol_url": "https://assets.tcgdex.net/univ/ex/ex10/symbol.png",
     "card_count": 117,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "exu",
+    "set_name_us": "Unseen Forces Unown Collection",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 28,
     "type": "official-set-api"
   },
   {
@@ -360,20 +369,20 @@
     "type": "official-set-api"
   },
   {
-    "set_id": "tk-ex-p",
-    "set_name_us": "EX trainer Kit 2 (Plusle)",
-    "series_name_us": null,
-    "logo_url": null,
-    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-ex-p/symbol.png",
-    "card_count": 12,
-    "type": "official-set-api"
-  },
-  {
     "set_id": "tk-ex-m",
     "set_name_us": "EX trainer Kit 2 (Minun)",
     "series_name_us": null,
     "logo_url": null,
     "symbol_url": null,
+    "card_count": 12,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-ex-p",
+    "set_name_us": "EX trainer Kit 2 (Plusle)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-ex-p/symbol.png",
     "card_count": 12,
     "type": "official-set-api"
   },
@@ -441,15 +450,6 @@
     "type": "official-set-api"
   },
   {
-    "set_id": "dp1",
-    "set_name_us": "Diamond & Pearl",
-    "series_name_us": null,
-    "logo_url": "https://assets.tcgdex.net/en/dp/dp1/logo.png",
-    "symbol_url": "https://assets.tcgdex.net/univ/dp/dp1/symbol.png",
-    "card_count": 130,
-    "type": "official-set-api"
-  },
-  {
     "set_id": "dpp",
     "set_name_us": "DP Black Star Promos",
     "series_name_us": null,
@@ -459,21 +459,21 @@
     "type": "official-set-api"
   },
   {
+    "set_id": "dp1",
+    "set_name_us": "Diamond & Pearl",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/dp/dp1/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/dp/dp1/symbol.png",
+    "card_count": 130,
+    "type": "official-set-api"
+  },
+  {
     "set_id": "dp2",
     "set_name_us": "Mysterious Treasures",
     "series_name_us": null,
     "logo_url": "https://assets.tcgdex.net/en/dp/dp2/logo.png",
     "symbol_url": "https://assets.tcgdex.net/univ/dp/dp2/symbol.png",
     "card_count": 124,
-    "type": "official-set-api"
-  },
-  {
-    "set_id": "pop6",
-    "set_name_us": "POP Series 6",
-    "series_name_us": null,
-    "logo_url": "https://assets.tcgdex.net/en/pop/pop6/logo.png",
-    "symbol_url": "https://assets.tcgdex.net/univ/pop/pop6/symbol.png",
-    "card_count": 17,
     "type": "official-set-api"
   },
   {
@@ -492,6 +492,15 @@
     "logo_url": null,
     "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-dp-m/symbol.png",
     "card_count": 12,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "pop6",
+    "set_name_us": "POP Series 6",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/pop/pop6/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/pop/pop6/symbol.png",
+    "card_count": 17,
     "type": "official-set-api"
   },
   {
@@ -630,20 +639,20 @@
     "type": "official-set-api"
   },
   {
-    "set_id": "tk-hs-g",
-    "set_name_us": "HS trainer Kit (Gyarados)",
-    "series_name_us": null,
-    "logo_url": null,
-    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-hs-g/symbol.png",
-    "card_count": 30,
-    "type": "official-set-api"
-  },
-  {
     "set_id": "tk-hs-r",
     "set_name_us": "HS trainer Kit (Raichu)",
     "series_name_us": null,
     "logo_url": null,
     "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-hs-r/symbol.png",
+    "card_count": 30,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-hs-g",
+    "set_name_us": "HS trainer Kit (Gyarados)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-hs-g/symbol.png",
     "card_count": 30,
     "type": "official-set-api"
   },
@@ -703,7 +712,7 @@
   },
   {
     "set_id": "2011bw",
-    "set_name_us": "Macdonald's Collection 2011",
+    "set_name_us": "McDonald's Collection 2011",
     "series_name_us": null,
     "logo_url": null,
     "symbol_url": null,
@@ -766,7 +775,7 @@
   },
   {
     "set_id": "2012bw",
-    "set_name_us": "Macdonald's Collection 2012",
+    "set_name_us": "McDonald's Collection 2012",
     "series_name_us": null,
     "logo_url": null,
     "symbol_url": null,
@@ -864,21 +873,21 @@
     "type": "official-set-api"
   },
   {
+    "set_id": "xya",
+    "set_name_us": "Yellow A Alternate",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 6,
+    "type": "official-set-api"
+  },
+  {
     "set_id": "xy1",
     "set_name_us": "XY",
     "series_name_us": null,
     "logo_url": "https://assets.tcgdex.net/en/xy/xy1/logo.png",
     "symbol_url": "https://assets.tcgdex.net/univ/xy/xy1/symbol.png",
     "card_count": 146,
-    "type": "official-set-api"
-  },
-  {
-    "set_id": "xya",
-    "set_name_us": "Yello A Alternate",
-    "series_name_us": null,
-    "logo_url": null,
-    "symbol_url": null,
-    "card_count": 6,
     "type": "official-set-api"
   },
   {
@@ -910,7 +919,7 @@
   },
   {
     "set_id": "2014xy",
-    "set_name_us": "Macdonald's Collection 2014",
+    "set_name_us": "McDonald's Collection 2014",
     "series_name_us": null,
     "logo_url": null,
     "symbol_url": null,
@@ -1018,7 +1027,7 @@
   },
   {
     "set_id": "2015xy",
-    "set_name_us": "Macdonald's Collection 2015",
+    "set_name_us": "McDonald's Collection 2015",
     "series_name_us": null,
     "logo_url": null,
     "symbol_url": null,
@@ -1044,20 +1053,20 @@
     "type": "official-set-api"
   },
   {
-    "set_id": "tk-xy-p",
-    "set_name_us": "XY trainer Kit (Pikachu Libre)",
-    "series_name_us": null,
-    "logo_url": null,
-    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol.png",
-    "card_count": 30,
-    "type": "official-set-api"
-  },
-  {
     "set_id": "tk-xy-su",
     "set_name_us": "XY trainer Kit (Suicune)",
     "series_name_us": null,
     "logo_url": null,
     "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-xy-su/symbol.png",
+    "card_count": 30,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "tk-xy-p",
+    "set_name_us": "XY trainer Kit (Pikachu Libre)",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-xy-p/symbol.png",
     "card_count": 30,
     "type": "official-set-api"
   },
@@ -1081,7 +1090,7 @@
   },
   {
     "set_id": "2016xy",
-    "set_name_us": "Macdonald's Collection 2016",
+    "set_name_us": "McDonald's Collection 2016",
     "series_name_us": null,
     "logo_url": null,
     "symbol_url": null,
@@ -1098,6 +1107,15 @@
     "type": "official-set-api"
   },
   {
+    "set_id": "smp",
+    "set_name_us": "SM Black Star Promos",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sm/smp/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sm/smp/symbol.png",
+    "card_count": 248,
+    "type": "official-set-api"
+  },
+  {
     "set_id": "sm1",
     "set_name_us": "Sun & Moon",
     "series_name_us": null,
@@ -1107,12 +1125,12 @@
     "type": "official-set-api"
   },
   {
-    "set_id": "smp",
-    "set_name_us": "SM Black Star Promos",
+    "set_id": "tk-sm-r",
+    "set_name_us": "SM trainer Kit (Alolan Raichu)",
     "series_name_us": null,
-    "logo_url": "https://assets.tcgdex.net/en/sm/smp/logo.png",
-    "symbol_url": "https://assets.tcgdex.net/univ/sm/smp/symbol.png",
-    "card_count": 244,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-sm-r/symbol.png",
+    "card_count": 30,
     "type": "official-set-api"
   },
   {
@@ -1121,15 +1139,6 @@
     "series_name_us": null,
     "logo_url": null,
     "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-sm-l/symbol.png",
-    "card_count": 30,
-    "type": "official-set-api"
-  },
-  {
-    "set_id": "tk-sm-r",
-    "set_name_us": "SM trainer Kit (Alolan Raichu)",
-    "series_name_us": null,
-    "logo_url": null,
-    "symbol_url": "https://assets.tcgdex.net/univ/tk/tk-sm-r/symbol.png",
     "card_count": 30,
     "type": "official-set-api"
   },
@@ -1144,7 +1153,7 @@
   },
   {
     "set_id": "2017sm",
-    "set_name_us": "Macdonald's Collection 2017",
+    "set_name_us": "McDonald's Collection 2017",
     "series_name_us": null,
     "logo_url": null,
     "symbol_url": null,
@@ -1216,7 +1225,7 @@
   },
   {
     "set_id": "2018sm",
-    "set_name_us": "Macdonald's Collection 2018",
+    "set_name_us": "McDonald's Collection 2018",
     "series_name_us": null,
     "logo_url": null,
     "symbol_url": null,
@@ -1269,6 +1278,15 @@
     "type": "official-set-api"
   },
   {
+    "set_id": "sma",
+    "set_name_us": "Hidden Fates Shiny Vault",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": "https://assets.tcgdex.net/univ/sm/sma/symbol.png",
+    "card_count": 94,
+    "type": "official-set-api"
+  },
+  {
     "set_id": "sm115",
     "set_name_us": "Hidden Fates",
     "series_name_us": null,
@@ -1278,17 +1296,8 @@
     "type": "official-set-api"
   },
   {
-    "set_id": "sma",
-    "set_name_us": "Yellow A Alternate",
-    "series_name_us": null,
-    "logo_url": null,
-    "symbol_url": "https://assets.tcgdex.net/univ/sm/sma/symbol.png",
-    "card_count": 94,
-    "type": "official-set-api"
-  },
-  {
     "set_id": "2019sm",
-    "set_name_us": "Macdonald's Collection 2019",
+    "set_name_us": "McDonald's Collection 2019",
     "series_name_us": null,
     "logo_url": null,
     "symbol_url": null,
@@ -1310,7 +1319,7 @@
     "series_name_us": null,
     "logo_url": "https://assets.tcgdex.net/en/swsh/swshp/logo.png",
     "symbol_url": "https://assets.tcgdex.net/univ/swsh/swshp/symbol.png",
-    "card_count": 287,
+    "card_count": 307,
     "type": "official-set-api"
   },
   {
@@ -1369,11 +1378,20 @@
   },
   {
     "set_id": "2021swsh",
-    "set_name_us": "Macdonald's Collection 2021",
+    "set_name_us": "McDonald's Collection 2021",
     "series_name_us": null,
     "logo_url": null,
     "symbol_url": "https://assets.tcgdex.net/univ/mc/2021swsh/symbol.png",
     "card_count": 25,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swsh4.5sv",
+    "set_name_us": "Shining Fates Shiny Vault",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 122,
     "type": "official-set-api"
   },
   {
@@ -1382,7 +1400,7 @@
     "series_name_us": null,
     "logo_url": "https://assets.tcgdex.net/en/swsh/swsh4.5/logo.png",
     "symbol_url": "https://assets.tcgdex.net/univ/swsh/swsh4.5/symbol.png",
-    "card_count": 195,
+    "card_count": 73,
     "type": "official-set-api"
   },
   {
@@ -1413,12 +1431,21 @@
     "type": "official-set-api"
   },
   {
+    "set_id": "cel25cc",
+    "set_name_us": "Celebrations Classic Collection",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 25,
+    "type": "official-set-api"
+  },
+  {
     "set_id": "cel25",
     "set_name_us": "Celebrations",
     "series_name_us": null,
     "logo_url": "https://assets.tcgdex.net/en/swsh/cel25/logo.png",
     "symbol_url": "https://assets.tcgdex.net/univ/swsh/cel25/symbol.png",
-    "card_count": 51,
+    "card_count": 25,
     "type": "official-set-api"
   },
   {
@@ -1436,7 +1463,25 @@
     "series_name_us": null,
     "logo_url": "https://assets.tcgdex.net/en/swsh/swsh9/logo.png",
     "symbol_url": "https://assets.tcgdex.net/univ/swsh/swsh9/symbol.png",
-    "card_count": 216,
+    "card_count": 186,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swsh9.5tg",
+    "set_name_us": "Brilliant Stars Trainer Gallery",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 30,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swsh10.5tg",
+    "set_name_us": "Astral Radiance Trainer Gallery",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 30,
     "type": "official-set-api"
   },
   {
@@ -1445,7 +1490,7 @@
     "series_name_us": null,
     "logo_url": "https://assets.tcgdex.net/en/swsh/swsh10/logo.png",
     "symbol_url": "https://assets.tcgdex.net/univ/swsh/swsh10/symbol.png",
-    "card_count": 246,
+    "card_count": 216,
     "type": "official-set-api"
   },
   {
@@ -1458,12 +1503,39 @@
     "type": "official-set-api"
   },
   {
+    "set_id": "2022swsh",
+    "set_name_us": "McDonald's Collection 2022",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 15,
+    "type": "official-set-api"
+  },
+  {
     "set_id": "swsh11",
     "set_name_us": "Lost Origin",
     "series_name_us": null,
     "logo_url": "https://assets.tcgdex.net/en/swsh/swsh11/logo.png",
     "symbol_url": "https://assets.tcgdex.net/univ/swsh/swsh11/symbol.png",
-    "card_count": 247,
+    "card_count": 217,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swsh11.5tg",
+    "set_name_us": "Lost Origin Trainer Gallery",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 30,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swsh12.5tg",
+    "set_name_us": "Silver Tempest Trainer Gallery",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 30,
     "type": "official-set-api"
   },
   {
@@ -1472,7 +1544,7 @@
     "series_name_us": null,
     "logo_url": "https://assets.tcgdex.net/en/swsh/swsh12/logo.png",
     "symbol_url": "https://assets.tcgdex.net/univ/swsh/swsh12/symbol.png",
-    "card_count": 245,
+    "card_count": 215,
     "type": "official-set-api"
   },
   {
@@ -1481,7 +1553,16 @@
     "series_name_us": null,
     "logo_url": "https://assets.tcgdex.net/en/swsh/swsh12.5/logo.png",
     "symbol_url": "https://assets.tcgdex.net/univ/swsh/swsh12.5/symbol.png",
-    "card_count": 230,
+    "card_count": 160,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "swsh12.5gg",
+    "set_name_us": "Crown Zenith Galarian Gallery",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 70,
     "type": "official-set-api"
   },
   {
@@ -1490,7 +1571,16 @@
     "series_name_us": null,
     "logo_url": null,
     "symbol_url": null,
-    "card_count": 219,
+    "card_count": 226,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "sve",
+    "set_name_us": "Scarlet & Violet Energy",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 24,
     "type": "official-set-api"
   },
   {
@@ -1512,6 +1602,15 @@
     "type": "official-set-api"
   },
   {
+    "set_id": "2023sv",
+    "set_name_us": "McDonald's Collection 2023",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 15,
+    "type": "official-set-api"
+  },
+  {
     "set_id": "sv03",
     "set_name_us": "Obsidian Flames",
     "series_name_us": null,
@@ -1527,6 +1626,15 @@
     "logo_url": "https://assets.tcgdex.net/en/sv/sv03.5/logo.png",
     "symbol_url": "https://assets.tcgdex.net/univ/sv/sv03.5/symbol.png",
     "card_count": 207,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "mfb",
+    "set_name_us": "My First Battle",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 48,
     "type": "official-set-api"
   },
   {
@@ -1593,6 +1701,15 @@
     "type": "official-set-api"
   },
   {
+    "set_id": "2024sv",
+    "set_name_us": "McDonald's Collection 2024",
+    "series_name_us": null,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 15,
+    "type": "official-set-api"
+  },
+  {
     "set_id": "sv08.5",
     "set_name_us": "Prismatic Evolutions",
     "series_name_us": null,
@@ -1620,6 +1737,15 @@
     "type": "official-set-api"
   },
   {
+    "set_id": "sv10.5w",
+    "set_name_us": "White Flare",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/sv/sv10.5w/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/sv/sv10.5w/symbol.png",
+    "card_count": 173,
+    "type": "official-set-api"
+  },
+  {
     "set_id": "sv10.5b",
     "set_name_us": "Black Bolt",
     "series_name_us": null,
@@ -1629,12 +1755,12 @@
     "type": "official-set-api"
   },
   {
-    "set_id": "sv10.5w",
-    "set_name_us": "White Flare",
+    "set_id": "mee",
+    "set_name_us": "Mega Evolution Energy",
     "series_name_us": null,
-    "logo_url": "https://assets.tcgdex.net/en/sv/sv10.5w/logo.png",
-    "symbol_url": "https://assets.tcgdex.net/univ/sv/sv10.5w/symbol.png",
-    "card_count": 173,
+    "logo_url": null,
+    "symbol_url": null,
+    "card_count": 8,
     "type": "official-set-api"
   },
   {
@@ -1652,7 +1778,7 @@
     "series_name_us": null,
     "logo_url": null,
     "symbol_url": null,
-    "card_count": 10,
+    "card_count": 60,
     "type": "official-set-api"
   },
   {
@@ -1662,6 +1788,42 @@
     "logo_url": "https://assets.tcgdex.net/en/me/me02/logo.png",
     "symbol_url": null,
     "card_count": 130,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "me02.5",
+    "set_name_us": "Ascended Heroes",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/me/me02.5/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/me/me02.5/symbol.png",
+    "card_count": 295,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "me03",
+    "set_name_us": "Perfect Order",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/me/me03/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/me/me03/symbol.png",
+    "card_count": 124,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "me04",
+    "set_name_us": "Chaos Rising",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/me/me04/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/me/me04/symbol.png",
+    "card_count": 122,
+    "type": "official-set-api"
+  },
+  {
+    "set_id": "me05",
+    "set_name_us": "Pitch Black",
+    "series_name_us": null,
+    "logo_url": "https://assets.tcgdex.net/en/me/me05/logo.png",
+    "symbol_url": "https://assets.tcgdex.net/univ/me/me05/symbol.png",
+    "card_count": 120,
     "type": "official-set-api"
   }
 ]
