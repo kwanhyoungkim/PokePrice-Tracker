@@ -7,7 +7,7 @@ from tcg_pocket_filter import is_tcg_pocket_set
 
 # 설정
 TCGDEX_JP_URL = "https://api.tcgdex.net/v2/ja"
-OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "../backend/data")
+OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data")
 FILE_NAME = "all_cards_jp.json"
 CHECKPOINT_PATH = os.path.join(OUTPUT_DIR, "all_cards_jp.partial.json")
 FAILED_IDS_PATH = os.path.join(OUTPUT_DIR, "all_cards_jp.failed_ids.json")
