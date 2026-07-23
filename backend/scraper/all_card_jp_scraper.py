@@ -3,13 +3,16 @@ import json
 import os
 import time
 
+from tcg_pocket_filter import is_tcg_pocket_set
+
 # 설정
 TCGDEX_JP_URL = "https://api.tcgdex.net/v2/ja"
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "../backend/data")
 FILE_NAME = "all_cards_jp.json"
+CHECKPOINT_PATH = os.path.join(OUTPUT_DIR, "all_cards_jp.partial.json")
 
 def fetch_all_japanese_cards():
-    """TCGdex API를 사용하여 모든 일본어 카드 정보 수집"""
+    """TCGdex API를 사용하여 모든 일본어 카드 정보 수집 (TCG Pocket 세트는 제외)"""
     print("="*70)
     print("🇯🇵 일본어 포켓몬 카드 전체 데이터 수집 시작")
     print("="*70)
@@ -29,31 +32,43 @@ def fetch_all_japanese_cards():
     print("-" * 70)
 
     all_details = []
-    
+    skipped_pocket = 0
+
     # 2. 개별 카드 상세 정보 수집
     for idx, card in enumerate(summary_list, start=1):
         card_id = card['id']
-        
+
         try:
             detail_res = requests.get(f"{TCGDEX_JP_URL}/cards/{card_id}", timeout=10)
             if detail_res.status_code == 200:
                 data = detail_res.json()
-                
-                # 필요한 정보만 정제해서 저장
-                card_entry = {
-                    "id": data.get("id"),
-                    "name": data.get("name"),
-                    "series": data.get("set", {}).get("name", "Unknown"),
-                    "series_id": data.get("set", {}).get("id"),
-                    "number": data.get("localId"),
-                    "rarity": data.get("rarity"),
-                    "image": f"{data.get('image')}/low.jpg" if data.get('image') else ""
-                }
-                all_details.append(card_entry)
+                set_info = data.get("set", {}) or {}
+
+                # Pokemon TCG Pocket(모바일 게임) 세트는 실물 카드가 아니므로 제외
+                if is_tcg_pocket_set(set_id=set_info.get("id"), set_obj=set_info):
+                    skipped_pocket += 1
+                else:
+                    # 필요한 정보만 정제해서 저장
+                    card_entry = {
+                        "id": data.get("id"),
+                        "name": data.get("name"),
+                        "series": set_info.get("name", "Unknown"),
+                        "series_id": set_info.get("id"),
+                        "number": data.get("localId"),
+                        "rarity": data.get("rarity"),
+                        "image": f"{data.get('image')}/low.jpg" if data.get('image') else ""
+                    }
+                    all_details.append(card_entry)
 
             # 진행 상황 표시
             if idx % 100 == 0 or idx == total_count:
-                print(f"🚀 진행 중: {idx}/{total_count} ({idx/total_count*100:.1f}%)")
+                print(f"🚀 진행 중: {idx}/{total_count} ({idx/total_count*100:.1f}%) | TCG Pocket 제외: {skipped_pocket:,}")
+
+            # 대용량 수집 중 끊길 경우를 대비한 체크포인트 저장
+            if idx % 1000 == 0:
+                os.makedirs(OUTPUT_DIR, exist_ok=True)
+                with open(CHECKPOINT_PATH, 'w', encoding='utf-8') as f:
+                    json.dump(all_details, f, ensure_ascii=False)
 
             # 서버 매너를 위한 딜레이
             time.sleep(0.05)
@@ -65,6 +80,7 @@ def fetch_all_japanese_cards():
             print("\n\n🛑 중단됨! 현재까지 수집된 데이터를 저장합니다...")
             break
 
+    print(f"\n🚫 Pokemon TCG Pocket(모바일 게임) 세트로 판단되어 제외된 카드: {skipped_pocket:,}장")
     return all_details
 
 def save_to_json(data):
@@ -82,6 +98,9 @@ def save_to_json(data):
 
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(final_list, f, indent=2, ensure_ascii=False)
+
+    if os.path.exists(CHECKPOINT_PATH):
+        os.remove(CHECKPOINT_PATH)
 
     print("\n" + "="*70)
     print(f"✅ 저장 완료: {output_path}")
