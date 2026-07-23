@@ -1584,39 +1584,12 @@
     "type": "official-set-api"
   },
   {
-    "set_id": "A1",
-    "set_name_us": "Genetic Apex",
-    "series_name_us": null,
-    "logo_url": "https://assets.tcgdex.net/en/tcgp/A1/logo.png",
-    "symbol_url": "https://assets.tcgdex.net/univ/tcgp/A1/symbol.png",
-    "card_count": 286,
-    "type": "official-set-api"
-  },
-  {
-    "set_id": "P-A",
-    "set_name_us": "Promos-A",
-    "series_name_us": null,
-    "logo_url": "https://assets.tcgdex.net/en/tcgp/P-A/logo.png",
-    "symbol_url": null,
-    "card_count": 100,
-    "type": "official-set-api"
-  },
-  {
     "set_id": "sv08",
     "set_name_us": "Surging Sparks",
     "series_name_us": null,
     "logo_url": "https://assets.tcgdex.net/en/sv/sv08/logo.png",
     "symbol_url": null,
     "card_count": 252,
-    "type": "official-set-api"
-  },
-  {
-    "set_id": "A1a",
-    "set_name_us": "Mythical Island",
-    "series_name_us": null,
-    "logo_url": "https://assets.tcgdex.net/en/tcgp/A1a/logo.png",
-    "symbol_url": null,
-    "card_count": 86,
     "type": "official-set-api"
   },
   {
@@ -1629,33 +1602,6 @@
     "type": "official-set-api"
   },
   {
-    "set_id": "A2",
-    "set_name_us": "Space-Time Smackdown",
-    "series_name_us": null,
-    "logo_url": "https://assets.tcgdex.net/en/tcgp/A2/logo.png",
-    "symbol_url": null,
-    "card_count": 207,
-    "type": "official-set-api"
-  },
-  {
-    "set_id": "A2a",
-    "set_name_us": "Triumphant Light",
-    "series_name_us": null,
-    "logo_url": "https://assets.tcgdex.net/en/tcgp/A2a/logo.png",
-    "symbol_url": "https://assets.tcgdex.net/univ/tcgp/A2a/symbol.png",
-    "card_count": 96,
-    "type": "official-set-api"
-  },
-  {
-    "set_id": "A2b",
-    "set_name_us": "Shining Revelry",
-    "series_name_us": null,
-    "logo_url": "https://assets.tcgdex.net/en/tcgp/A2b/logo.png",
-    "symbol_url": "https://assets.tcgdex.net/univ/tcgp/A2b/symbol.png",
-    "card_count": 111,
-    "type": "official-set-api"
-  },
-  {
     "set_id": "sv09",
     "set_name_us": "Journey Together",
     "series_name_us": null,
@@ -1665,39 +1611,12 @@
     "type": "official-set-api"
   },
   {
-    "set_id": "A3",
-    "set_name_us": "Celestial Guardians",
-    "series_name_us": null,
-    "logo_url": "https://assets.tcgdex.net/en/tcgp/A3/logo.png",
-    "symbol_url": null,
-    "card_count": 239,
-    "type": "official-set-api"
-  },
-  {
-    "set_id": "A3a",
-    "set_name_us": "Extradimensional Crisis",
-    "series_name_us": null,
-    "logo_url": null,
-    "symbol_url": null,
-    "card_count": 103,
-    "type": "official-set-api"
-  },
-  {
     "set_id": "sv10",
     "set_name_us": "Destined Rivals",
     "series_name_us": null,
     "logo_url": "https://assets.tcgdex.net/en/sv/sv10/logo.png",
     "symbol_url": "https://assets.tcgdex.net/univ/sv/sv10/symbol.png",
     "card_count": 244,
-    "type": "official-set-api"
-  },
-  {
-    "set_id": "A3b",
-    "set_name_us": "Eevee Grove",
-    "series_name_us": null,
-    "logo_url": null,
-    "symbol_url": null,
-    "card_count": 107,
     "type": "official-set-api"
   },
   {
@@ -1719,24 +1638,6 @@
     "type": "official-set-api"
   },
   {
-    "set_id": "A4",
-    "set_name_us": "Wisdom of Sea and Sky",
-    "series_name_us": null,
-    "logo_url": "https://assets.tcgdex.net/en/tcgp/A4/logo.png",
-    "symbol_url": null,
-    "card_count": 241,
-    "type": "official-set-api"
-  },
-  {
-    "set_id": "A4a",
-    "set_name_us": "Secluded Springs",
-    "series_name_us": null,
-    "logo_url": "https://assets.tcgdex.net/en/tcgp/A4a/logo.png",
-    "symbol_url": "https://assets.tcgdex.net/univ/tcgp/A4a/symbol.png",
-    "card_count": 105,
-    "type": "official-set-api"
-  },
-  {
     "set_id": "me01",
     "set_name_us": "Mega Evolution",
     "series_name_us": null,
@@ -1755,30 +1656,12 @@
     "type": "official-set-api"
   },
   {
-    "set_id": "B1",
-    "set_name_us": "Mega Rising",
-    "series_name_us": null,
-    "logo_url": "https://assets.tcgdex.net/en/tcgp/B1/logo.png",
-    "symbol_url": "https://assets.tcgdex.net/univ/tcgp/B1/symbol.png",
-    "card_count": 331,
-    "type": "official-set-api"
-  },
-  {
     "set_id": "me02",
     "set_name_us": "Phantasmal Flames",
     "series_name_us": null,
     "logo_url": "https://assets.tcgdex.net/en/me/me02/logo.png",
     "symbol_url": null,
     "card_count": 130,
-    "type": "official-set-api"
-  },
-  {
-    "set_id": "B1a",
-    "set_name_us": "Crimson Blaze",
-    "series_name_us": null,
-    "logo_url": null,
-    "symbol_url": null,
-    "card_count": 103,
     "type": "official-set-api"
   }
 ]
