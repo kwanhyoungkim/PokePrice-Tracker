@@ -2,6 +2,8 @@ import requests
 import json
 import os
 
+from tcg_pocket_filter import is_tcg_pocket_set
+
 # 설정
 TCGDEX_EN_SETS_URL = "https://api.tcgdex.net/v2/en/sets"
 OUTPUT_JSON = 'backend/data/pokemon_series_us_info.json'
@@ -16,9 +18,10 @@ def update_sets_json_only():
         response = requests.get(TCGDEX_EN_SETS_URL)
         response.raise_for_status()
         api_data = response.json()
-        
+
         updated_sets_list = []
-        
+        skipped_pocket = 0
+
         print(f"🔍 총 {len(api_data)}개의 세트를 분석 중...")
 
         for s in api_data:
@@ -26,12 +29,17 @@ def update_sets_json_only():
             set_id = s.get('id')          # 세트 고유 ID (예: sv03.5)
             set_name = s.get('name')      # 세트 이름 (예: 151)
             series_name = s.get('series', {}).get('name') # 소속 시리즈 (예: Scarlet & Violet)
-            
+
+            # Pokemon TCG Pocket(모바일 게임) 세트는 실물 카드가 아니므로 제외
+            if is_tcg_pocket_set(set_id=set_id, set_obj={'id': set_id, 'logo': s.get('logo')}):
+                skipped_pocket += 1
+                continue
+
             # 로고 및 심볼 URL 생성
             # 로고는 세트의 큰 로고, 심볼은 카드에 박히는 작은 아이콘입니다.
             logo_url = f"{s.get('logo')}.png" if s.get('logo') else None
             symbol_url = f"{s.get('symbol')}.png" if s.get('symbol') else None
-            
+
             # 카드 개수 정보
             card_count = s.get('cardCount', {}).get('total', 0)
 
@@ -45,17 +53,18 @@ def update_sets_json_only():
                 "card_count": card_count,         # 총 카드 수
                 "type": "official-set-api"        # 데이터 출처
             }
-            
+
             updated_sets_list.append(entry)
 
         # 2. 결과 저장 (JSON 파일로 출력)
         os.makedirs(os.path.dirname(OUTPUT_JSON), exist_ok=True)
-        
+
         with open(OUTPUT_JSON, 'w', encoding='utf-8') as f:
             json.dump(updated_sets_list, f, indent=2, ensure_ascii=False)
-        
+
         print("\n" + "="*70)
         print(f"🎉 업데이트 완료! 총 {len(updated_sets_list)}개의 세트 정보가 저장되었습니다.")
+        print(f"🚫 Pokemon TCG Pocket(모바일 게임) 세트로 판단되어 제외된 세트: {skipped_pocket}개")
         print(f"파일 위치: {os.path.abspath(OUTPUT_JSON)}")
         print("="*70)
 
