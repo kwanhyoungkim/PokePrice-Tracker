@@ -83,59 +83,64 @@ def search_cards():
         except Exception as e:
             print(f"❌ Postgres 조회 오류 (cards_en): {e}")
 
-    # 3. TCGdex API '전체 카드' 엔드포인트 활용
-    try:
-        api_lang = 'ja' if target_lang == 'ja' else 'en'
-        url = f"https://api.tcgdex.net/v2/{api_lang}/cards"
-        
-        res = requests.get(url, params={'name': jp_name if target_lang == 'ja' else eng_name}, timeout=5)
-        
-        if res.status_code == 200:
-            for card in res.json():
-                cid = card.get('id')
-                if cid not in final_results:
-                    set_info = card.get('set', {}) or {}
-                    # Pokemon TCG Pocket(모바일 게임) 세트는 실물 카드가 아니므로 제외
-                    if is_tcg_pocket_set(set_id=set_info.get('id'), set_obj=set_info):
-                        continue
-                    c_name_api = card.get('name', '').lower()
-                    if (jp_name and jp_name in c_name_api) or (eng_name in c_name_api):
-                        img = card.get('image')
-                        final_results[cid] = {
-                            'id': cid,
-                            'name': card.get('name'),
-                            'series': set_info.get('name'),
-                            'series_id': set_info.get('id'),
-                            'number': card.get('localId'),
-                            'image_url': f"{img}/low.jpg" if img else "",
-                            'language': api_lang
-                        }
+    # 3. (일본판 한정) TCGdex API '전체 카드' 요약 엔드포인트로 로컬 JSON 누락분 보완
+    #    영문판은 Postgres(cards_en)가 이미 series->sets->cards 전체 순회 + Pocket 필터를
+    #    거쳐 최신 상태로 채워져 있으므로 이 요약 엔드포인트를 추가로 병합하지 않는다.
+    #    (이 요약 엔드포인트는 set 정보가 부실할 때가 있어 Pocket 필터가 못 걸러내고
+    #     영문판 검색 결과에 Pocket 카드가 다시 섞여 들어오는 원인이었음)
+    if target_lang == 'ja':
+        try:
+            api_lang = 'ja'
+            url = f"https://api.tcgdex.net/v2/{api_lang}/cards"
 
-        if target_lang == 'ja' and len(final_results) < 15:
-            res_fb = requests.get(url, params={'name': eng_name}, timeout=5)
-            if res_fb.status_code == 200:
-                for card in res_fb.json():
+            res = requests.get(url, params={'name': jp_name}, timeout=5)
+
+            if res.status_code == 200:
+                for card in res.json():
                     cid = card.get('id')
                     if cid not in final_results:
                         set_info = card.get('set', {}) or {}
                         # Pokemon TCG Pocket(모바일 게임) 세트는 실물 카드가 아니므로 제외
                         if is_tcg_pocket_set(set_id=set_info.get('id'), set_obj=set_info):
                             continue
-                        # 이름 매칭 검증(1차 검색과 동일 기준) 없이 그대로 추가되던 버그도 함께 수정
                         c_name_api = card.get('name', '').lower()
-                        if not ((jp_name and jp_name in c_name_api) or (eng_name in c_name_api)):
-                            continue
-                        img = card.get('image')
-                        final_results[cid] = {
-                            'id': cid, 'name': card.get('name'),
-                            'series': set_info.get('name'),
-                            'series_id': set_info.get('id'),
-                            'number': card.get('localId'),
-                            'image_url': f"{img}/low.jpg" if img else "",
-                            'language': 'ja'
-                        }
-    except Exception as e:
-        print(f"API Error: {e}")
+                        if (jp_name and jp_name in c_name_api) or (eng_name in c_name_api):
+                            img = card.get('image')
+                            final_results[cid] = {
+                                'id': cid,
+                                'name': card.get('name'),
+                                'series': set_info.get('name'),
+                                'series_id': set_info.get('id'),
+                                'number': card.get('localId'),
+                                'image_url': f"{img}/low.jpg" if img else "",
+                                'language': api_lang
+                            }
+
+            if len(final_results) < 15:
+                res_fb = requests.get(url, params={'name': eng_name}, timeout=5)
+                if res_fb.status_code == 200:
+                    for card in res_fb.json():
+                        cid = card.get('id')
+                        if cid not in final_results:
+                            set_info = card.get('set', {}) or {}
+                            # Pokemon TCG Pocket(모바일 게임) 세트는 실물 카드가 아니므로 제외
+                            if is_tcg_pocket_set(set_id=set_info.get('id'), set_obj=set_info):
+                                continue
+                            # 이름 매칭 검증(1차 검색과 동일 기준) 없이 그대로 추가되던 버그도 함께 수정
+                            c_name_api = card.get('name', '').lower()
+                            if not ((jp_name and jp_name in c_name_api) or (eng_name in c_name_api)):
+                                continue
+                            img = card.get('image')
+                            final_results[cid] = {
+                                'id': cid, 'name': card.get('name'),
+                                'series': set_info.get('name'),
+                                'series_id': set_info.get('id'),
+                                'number': card.get('localId'),
+                                'image_url': f"{img}/low.jpg" if img else "",
+                                'language': 'ja'
+                            }
+        except Exception as e:
+            print(f"API Error: {e}")
 
     return jsonify(list(final_results.values()))
 
