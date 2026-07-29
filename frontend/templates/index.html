@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokePrice-Tracker | 포켓몬 카드 시세 조회</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>PokePrice-Tracker</h1>
+            <p>포켓몬 카드 이름을 검색하고, 언어 버전을 선택해서 이베이(eBay) 시세를 확인하세요.</p>
+        </header>
+
+        <section class="search-section">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="포켓몬 이름을 입력하세요 (예: 리자몽, Charizard)"
+                onkeydown="if (event.key === 'Enter') searchCards();"
+            >
+            <select id="langSelect">
+                <option value="EN">영문판 (EN)</option>
+                <option value="JP">일본판 (JP)</option>
+            </select>
+            <button id="searchBtn" onclick="searchCards()">검색</button>
+        </section>
+
+        <section id="cardListSection" class="hidden">
+            <div id="cardList" class="grid-container"></div>
+        </section>
+
+        <section id="priceResultSection" class="hidden">
+            <h2>eBay 시세 결과</h2>
+            <p id="loading" class="hidden">시세를 불러오는 중입니다...</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>상품 정보</th>
+                        <th>가격</th>
+                        <th>등록일</th>
+                    </tr>
+                </thead>
+                <tbody id="priceTableBody"></tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
