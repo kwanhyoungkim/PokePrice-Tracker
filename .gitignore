@@ -16,3 +16,8 @@ __pycache__/
 backend/data/all_cards_en.json
 backend/data/all_cards_en.partial.json
 backend/data/all_cards_en.failed_ids.json
+
+# 일본판 재수집(serebii.net) 시 생기는 임시 체크포인트/실패목록 파일.
+# all_cards_jp.json 본체는 계속 git에 커밋한다(아직 로컬 JSON 방식 유지).
+backend/data/all_cards_jp.partial.json
+backend/data/all_cards_jp.failed.json
