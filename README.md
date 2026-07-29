@@ -163,6 +163,16 @@ git clone https://github.com/kwanhyoungkim/PokePrice-Tracker.git
 ```
 pip install -r requirements.txt
 ```
+
+카드 데이터 DB(Postgres, 영문판) 준비:
+```
+docker compose up -d                       # Postgres 컨테이너 기동
+python3 backend/database/load_en_cards.py  # all_cards_en.json -> Postgres 적재 (최초 1회 / 데이터 갱신 시)
+```
+> 영문판 카드 데이터는 더 이상 로컬 JSON을 앱이 직접 읽지 않고, 위 명령으로 도커의 Postgres에 적재해두고 조회합니다.
+> `.env.example`을 복사해 `.env`로 만들고 필요하면 `POSTGRES_*` 값을 맞춰주세요(기본값 그대로면 별도 설정 불필요).
+> (일본판은 아직 기존 방식대로 로컬 JSON을 그대로 사용합니다.)
+
 서버 실행:
 ```
 python app.py
