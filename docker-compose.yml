@@ -8,7 +8,8 @@ services:
       POSTGRES_USER: ${POSTGRES_USER:-pokeprice}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-pokeprice}
     ports:
-      - "${POSTGRES_PORT:-5432}:5432"
+      # 로컬에 이미 5432를 쓰는 Postgres가 있을 수 있어서 호스트 쪽 기본 포트를 5433으로 둠
+      - "${POSTGRES_PORT:-5433}:5432"
     volumes:
       - pokeprice_cards_db_data:/var/lib/postgresql/data
     healthcheck:

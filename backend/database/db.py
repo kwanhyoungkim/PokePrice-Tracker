@@ -21,7 +21,7 @@ def get_connection():
     """Postgres 커넥션을 새로 열어서 반환한다. 사용 후 반드시 close() 해줄 것."""
     return psycopg2.connect(
         host=os.getenv("POSTGRES_HOST", "localhost"),
-        port=os.getenv("POSTGRES_PORT", "5432"),
+        port=os.getenv("POSTGRES_PORT", "5433"),
         dbname=os.getenv("POSTGRES_DB", "pokeprice"),
         user=os.getenv("POSTGRES_USER", "pokeprice"),
         password=os.getenv("POSTGRES_PASSWORD", "pokeprice"),
