@@ -4,6 +4,7 @@ import os
 import json
 from dotenv import load_dotenv
 from main import PokemonPriceApp
+from backend.scraper.tcg_pocket_filter import is_tcg_pocket_set
 
 load_dotenv()
 
@@ -91,14 +92,18 @@ def search_cards():
             for card in res.json():
                 cid = card.get('id')
                 if cid not in final_results:
+                    set_info = card.get('set', {}) or {}
+                    # Pokemon TCG Pocket(모바일 게임) 세트는 실물 카드가 아니므로 제외
+                    if is_tcg_pocket_set(set_id=set_info.get('id'), set_obj=set_info):
+                        continue
                     c_name_api = card.get('name', '').lower()
                     if (jp_name and jp_name in c_name_api) or (eng_name in c_name_api):
                         img = card.get('image')
                         final_results[cid] = {
                             'id': cid,
                             'name': card.get('name'),
-                            'series': card.get('set', {}).get('name'),
-                            'series_id': card.get('set', {}).get('id'),
+                            'series': set_info.get('name'),
+                            'series_id': set_info.get('id'),
                             'number': card.get('localId'),
                             'image_url': f"{img}/low.jpg" if img else "",
                             'language': api_lang
@@ -110,11 +115,19 @@ def search_cards():
                 for card in res_fb.json():
                     cid = card.get('id')
                     if cid not in final_results:
+                        set_info = card.get('set', {}) or {}
+                        # Pokemon TCG Pocket(모바일 게임) 세트는 실물 카드가 아니므로 제외
+                        if is_tcg_pocket_set(set_id=set_info.get('id'), set_obj=set_info):
+                            continue
+                        # 이름 매칭 검증(1차 검색과 동일 기준) 없이 그대로 추가되던 버그도 함께 수정
+                        c_name_api = card.get('name', '').lower()
+                        if not ((jp_name and jp_name in c_name_api) or (eng_name in c_name_api)):
+                            continue
                         img = card.get('image')
                         final_results[cid] = {
                             'id': cid, 'name': card.get('name'),
-                            'series': card.get('set', {}).get('name'),
-                            'series_id': card.get('set', {}).get('id'),
+                            'series': set_info.get('name'),
+                            'series_id': set_info.get('id'),
                             'number': card.get('localId'),
                             'image_url': f"{img}/low.jpg" if img else "",
                             'language': 'ja'
