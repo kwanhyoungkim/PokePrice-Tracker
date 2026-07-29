@@ -9,3 +9,10 @@ __pycache__/
 .vscode/
 *.log
 .old_scripts/
+
+# 카드 데이터는 이제 Postgres(도커 컨테이너)에 적재해서 쓰고, 로컬 JSON은
+# backend/database/load_en_cards.py 적재용 임시 파일로만 사용한다.
+# (backend/scraper/*_scraper.py 로 재생성 가능하므로 git에는 올리지 않는다)
+backend/data/all_cards_en.json
+backend/data/all_cards_en.partial.json
+backend/data/all_cards_en.failed_ids.json

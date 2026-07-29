@@ -5,6 +5,7 @@ import json
 from dotenv import load_dotenv
 from main import PokemonPriceApp
 from backend.scraper.tcg_pocket_filter import is_tcg_pocket_set
+from backend.database.db import search_cards_en
 
 load_dotenv()
 
@@ -19,7 +20,10 @@ app = Flask(
 # 경로 설정
 JSON_PATH = os.path.join(base_dir, 'backend', 'data', 'pokemon_names.json')
 JSON_JP_PATH = os.path.join(base_dir, 'backend', 'data', 'all_cards_jp.json')
-JSON_EN_PATH = os.path.join(base_dir, 'backend', 'data', 'all_cards_en.json')
+# ⚠️ 영문판 카드 데이터는 더 이상 로컬 JSON을 통째로 메모리에 올리지 않는다.
+# docker-compose.yml 로 띄운 Postgres 컨테이너(cards_en 테이블)를 대신 조회한다.
+# (backend/database/load_en_cards.py 로 최초 1회 적재 필요, README 참고)
+# 일본판은 아직 이 방식으로 전환하지 않아 기존처럼 로컬 JSON을 그대로 사용한다.
 
 # DB 및 스크래퍼 로직 인스턴스
 price_app = PokemonPriceApp()
@@ -38,7 +42,6 @@ def load_json_file(file_path):
 # 데이터 사전 로드 (검색 속도 향상)
 POKEMON_MASTER_MAP = {item['korean_name']: item for item in load_json_file(JSON_PATH)}
 CARDS_JP_LOCAL = load_json_file(JSON_JP_PATH)
-CARDS_EN_LOCAL = load_json_file(JSON_EN_PATH)
 
 @app.route('/')
 def index():
@@ -63,23 +66,22 @@ def search_cards():
     final_results = {}
 
     # 2. 로컬 데이터 검색 (강화된 매칭)
-    local_source = CARDS_JP_LOCAL if target_lang == 'ja' else CARDS_EN_LOCAL
-    for c in local_source:
-        c_name = c.get('name', '').lower()
-        if target_lang == 'ja':
+    if target_lang == 'ja':
+        for c in CARDS_JP_LOCAL:
+            c_name = c.get('name', '').lower()
             if (jp_name and jp_name in c_name) or (eng_name in c_name):
                 final_results[c.get('id')] = {
                     'id': c.get('id'), 'name': c.get('name'), 'series': c.get('series'),
                     'series_id': c.get('series_id'), 'number': c.get('number'),
                     'image_url': c.get('image'), 'language': 'ja'
                 }
-        else:
-            if eng_name in c_name:
-                final_results[c.get('id')] = {
-                    'id': c.get('id'), 'name': c.get('name'), 'series': c.get('series'),
-                    'series_id': c.get('series_id'), 'number': c.get('number'),
-                    'image_url': c.get('image'), 'language': 'en'
-                }
+    else:
+        # 영문판은 로컬 JSON 대신 Postgres(도커 컨테이너)에서 조회한다.
+        try:
+            for card in search_cards_en(eng_name):
+                final_results[card['id']] = card
+        except Exception as e:
+            print(f"❌ Postgres 조회 오류 (cards_en): {e}")
 
     # 3. TCGdex API '전체 카드' 엔드포인트 활용
     try:
