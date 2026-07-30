@@ -69,10 +69,14 @@ def search_cards():
     if target_lang == 'ja':
         for c in CARDS_JP_LOCAL:
             c_name = c.get('name', '').lower()
-            if (jp_name and jp_name in c_name) or (eng_name in c_name):
+            # jp.pokellector.com 데이터는 실제 일본어 카드명(jp_name)도 함께 제공하므로
+            # 한글->일본어 변환된 이름과 직접 매칭할 수 있다.
+            c_jp_name = (c.get('jp_name') or '').lower()
+            if (jp_name and (jp_name in c_name or jp_name in c_jp_name)) or (eng_name in c_name):
                 final_results[c.get('id')] = {
                     'id': c.get('id'), 'name': c.get('name'), 'series': c.get('series'),
                     'series_id': c.get('series_id'), 'number': c.get('number'),
+                    'rarity': c.get('rarity'),
                     'image_url': c.get('image'), 'language': 'ja'
                 }
     else:
