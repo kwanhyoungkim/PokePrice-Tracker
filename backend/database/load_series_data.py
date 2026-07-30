@@ -109,11 +109,10 @@ def load_series_jp(conn):
             """
             INSERT INTO series_jp (series_code, series_name_jp, series_name_en, release_date, era)
             VALUES %s
-            ON CONFLICT (series_code) DO UPDATE SET
+            ON CONFLICT (series_code, era) DO UPDATE SET
                 series_name_jp = EXCLUDED.series_name_jp,
                 series_name_en = EXCLUDED.series_name_en,
-                release_date = EXCLUDED.release_date,
-                era = EXCLUDED.era
+                release_date = EXCLUDED.release_date
             """,
             rows,
             page_size=500,

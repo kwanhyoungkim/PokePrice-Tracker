@@ -74,13 +74,18 @@ CREATE TABLE IF NOT EXISTS series_us (
 
 SERIES_JP_SCHEMA = """
 CREATE TABLE IF NOT EXISTS series_jp (
-    series_code TEXT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
+    series_code TEXT,
     series_name_jp TEXT,
     series_name_en TEXT,
     release_date TEXT,
-    era TEXT
+    era TEXT,
+    UNIQUE (series_code, era)
 );
 """
+# ⚠️ pokemon_series_jp_info.json 의 series_code 는 시대(era)별로 1부터 다시 매겨지는
+# 값이라(예: "DP Era"의 1번, "XY Era"의 1번 등) 그 자체로는 유니크하지 않다.
+# 그래서 series_code 단독 PK가 아니라 (series_code, era) 조합을 유니크 키로 쓴다.
 
 
 def ensure_schema(conn):
