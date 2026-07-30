@@ -74,18 +74,16 @@ CREATE TABLE IF NOT EXISTS series_us (
 
 SERIES_JP_SCHEMA = """
 CREATE TABLE IF NOT EXISTS series_jp (
-    id SERIAL PRIMARY KEY,
-    series_code TEXT,
-    series_name_jp TEXT,
-    series_name_en TEXT,
-    release_date TEXT,
-    era TEXT,
-    UNIQUE (series_code, era)
+    set_id TEXT PRIMARY KEY,
+    set_name TEXT,
+    series_group TEXT
 );
 """
-# ⚠️ pokemon_series_jp_info.json 의 series_code 는 시대(era)별로 1부터 다시 매겨지는
-# 값이라(예: "DP Era"의 1번, "XY Era"의 1번 등) 그 자체로는 유니크하지 않다.
-# 그래서 series_code 단독 PK가 아니라 (series_code, era) 조합을 유니크 키로 쓴다.
+# set_id 는 jp.pokellector.com 의 세트 슬러그로, cards_jp.series_id 와 동일한 값이다.
+# series_group 은 jp.pokellector.com/sets 페이지의 헤더(예: "Scarlet & Violet Series",
+# "Mega Series")로 묶인 시리즈(시대) 이름이다.
+# (예전에는 pokemon_series_jp_info.json 을 썼는데, 그 파일의 series_code 는 시대마다
+#  1번부터 다시 매겨지는 값이라 신뢰할 수 없어서 jp.pokellector.com 기준으로 교체했다)
 
 
 def ensure_schema(conn):

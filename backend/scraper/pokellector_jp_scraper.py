@@ -62,23 +62,39 @@ CARD_LINK_RE = re.compile(r"^/([A-Za-z0-9\-]+-Expansion)/([A-Za-z0-9\-]+-Card-\d
 
 
 def fetch_set_list(timeout: int = 20, verbose: bool = True):
-    """https://jp.pokellector.com/sets 에서 전체 세트 목록을 [{"slug", "name"}] 로 반환한다."""
+    """https://jp.pokellector.com/sets 에서 전체 세트 목록을
+    [{"slug", "name", "series_group"}] 로 반환한다.
+
+    이 페이지는 "Mega Series", "Scarlet & Violet Series", "Sword & Shield Series" ...
+    처럼 헤더로 세트들을 시리즈(시대)별로 묶어서 보여준다. 헤더가 나올 때마다
+    그 이후 세트들의 series_group 으로 기록해서, 세트 슬러그별로 어느 시리즈에
+    속하는지도 함께 파악한다(일본판 시리즈 정보 갱신에 사용).
+    """
     res = requests.get(SETS_INDEX_URL, headers=REQUEST_HEADERS, timeout=timeout)
     res.raise_for_status()
     soup = BeautifulSoup(res.text, "html.parser")
 
     sets = []
     seen = set()
-    for a in soup.find_all("a", href=True):
-        m = SET_LINK_RE.match(a["href"])
+    current_series_group = ""
+
+    for el in soup.find_all(["h1", "h2", "h3", "h4", "a"]):
+        if el.name in ("h1", "h2", "h3", "h4"):
+            text = el.get_text(strip=True)
+            if text:
+                current_series_group = text
+            continue
+
+        href = el.get("href", "")
+        m = SET_LINK_RE.match(href)
         if not m:
             continue
         slug = m.group(1)
         if slug in seen:
             continue
         seen.add(slug)
-        name = a.get_text(strip=True) or a.get("title", "") or slug
-        sets.append({"slug": slug, "name": name})
+        name = el.get_text(strip=True) or el.get("title", "") or slug
+        sets.append({"slug": slug, "name": name, "series_group": current_series_group})
 
     if verbose:
         print(f"📚 세트 {len(sets):,}개 확인")

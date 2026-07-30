@@ -1,27 +1,39 @@
 """
-backend/data/pokemon_series_us_info.json, pokemon_series_jp_info.json 을 읽어서
+영문 시리즈(backend/data/pokemon_series_us_info.json)와 일본 시리즈 정보를
 Postgres(도커 컨테이너)의 series_us / series_jp 테이블에 적재한다.
+
+- series_us: backend/data/pokemon_series_us_info.json (로컬 파일) 을 읽어서 적재.
+- series_jp: jp.pokellector.com/sets 를 직접 스크래핑해서 적재한다(로컬 파일 아님).
+  예전에는 pokemon_series_jp_info.json 을 썼는데, 그 파일은 시리즈(시대)별로
+  1번부터 다시 매겨지는 번호를 PK로 써서 신뢰할 수 없었다. jp.pokellector.com/sets
+  페이지는 세트들을 "Scarlet & Violet Series", "Mega Series" 같은 실제 시리즈
+  헤더로 묶어서 보여주므로, 이 헤더를 그대로 시리즈 정보로 사용한다
+  (cards_jp.series_id 와 동일한 세트 슬러그를 키로 매칭할 수 있다).
 
 사용법 (프로젝트 루트에서):
     docker compose up -d          # Postgres 컨테이너 기동
     python3 backend/database/load_series_data.py
 
-이미 적재된 항목(PK 동일)은 최신 내용으로 덮어쓴다(UPSERT). 적재가 끝나면
-pokemon_series_us_info.json / pokemon_series_jp_info.json 파일은 더 이상
-앱 실행에 필요하지 않다.
+이미 적재된 항목(PK 동일)은 최신 내용으로 덮어쓴다(UPSERT).
 """
 
 import json
 import os
+import sys
 import time
 
 import psycopg2.extras
 
 from db import ensure_schema, get_connection
 
-DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data")
+_THIS_DIR = os.path.dirname(os.path.abspath(__file__))
+_SCRAPER_DIR = os.path.join(_THIS_DIR, "..", "scraper")
+sys.path.insert(0, _SCRAPER_DIR)
+
+from pokellector_jp_scraper import fetch_set_list as fetch_jp_set_list  # noqa: E402
+
+DATA_DIR = os.path.join(_THIS_DIR, "..", "data")
 SERIES_US_JSON = os.path.join(DATA_DIR, "pokemon_series_us_info.json")
-SERIES_JP_JSON = os.path.join(DATA_DIR, "pokemon_series_jp_info.json")
 
 
 def wait_for_db(retries: int = 20, delay: float = 1.5):
@@ -87,32 +99,31 @@ def load_series_us(conn):
 
 
 def load_series_jp(conn):
-    items = _load_json(SERIES_JP_JSON)
+    print("🌐 jp.pokellector.com/sets 에서 일본 시리즈 정보를 가져오는 중...")
+    items = fetch_jp_set_list(verbose=False)
     if not items:
+        print("⚠️  일본 시리즈 정보를 가져오지 못했습니다.")
         return
 
     rows = [
         (
-            item.get("series_code"),
-            item.get("series_name_jp"),
-            item.get("series_name_en"),
-            item.get("release_date"),
-            item.get("era"),
+            item.get("slug"),
+            item.get("name"),
+            item.get("series_group"),
         )
         for item in items
-        if item.get("series_code")
+        if item.get("slug")
     ]
 
     with conn.cursor() as cur:
         psycopg2.extras.execute_values(
             cur,
             """
-            INSERT INTO series_jp (series_code, series_name_jp, series_name_en, release_date, era)
+            INSERT INTO series_jp (set_id, set_name, series_group)
             VALUES %s
-            ON CONFLICT (series_code, era) DO UPDATE SET
-                series_name_jp = EXCLUDED.series_name_jp,
-                series_name_en = EXCLUDED.series_name_en,
-                release_date = EXCLUDED.release_date
+            ON CONFLICT (set_id) DO UPDATE SET
+                set_name = EXCLUDED.set_name,
+                series_group = EXCLUDED.series_group
             """,
             rows,
             page_size=500,
