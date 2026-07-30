@@ -16,3 +16,14 @@ __pycache__/
 backend/data/all_cards_en.json
 backend/data/all_cards_en.partial.json
 backend/data/all_cards_en.failed_ids.json
+
+# 일본판 카드 데이터도 Postgres(cards_jp 테이블)로 이전했다.
+# (backend/database/load_jp_cards.py 적재용 임시 파일로만 사용, git에는 안 올림)
+backend/data/all_cards_jp.json
+backend/data/all_cards_jp.partial.json
+backend/data/all_cards_jp.failed.json
+
+# 영문/일본 시리즈 정보도 Postgres(series_us, series_jp 테이블)로 이전했다.
+# (backend/database/load_series_data.py 적재용 임시 파일로만 사용, git에는 안 올림)
+backend/data/pokemon_series_us_info.json
+backend/data/pokemon_series_jp_info.json

@@ -164,14 +164,16 @@ git clone https://github.com/kwanhyoungkim/PokePrice-Tracker.git
 pip install -r requirements.txt
 ```
 
-카드 데이터 DB(Postgres, 영문판) 준비:
+카드/시리즈 데이터 DB(Postgres) 준비:
 ```
-docker compose up -d                       # Postgres 컨테이너 기동
-python3 backend/database/load_en_cards.py  # all_cards_en.json -> Postgres 적재 (최초 1회 / 데이터 갱신 시)
+docker compose up -d                          # Postgres 컨테이너 기동
+python3 backend/database/load_en_cards.py     # all_cards_en.json -> cards_en 테이블
+python3 backend/database/load_jp_cards.py     # all_cards_jp.json -> cards_jp 테이블
+python3 backend/database/load_series_data.py  # pokemon_series_us_info.json, pokemon_series_jp_info.json -> series_us, series_jp 테이블
 ```
-> 영문판 카드 데이터는 더 이상 로컬 JSON을 앱이 직접 읽지 않고, 위 명령으로 도커의 Postgres에 적재해두고 조회합니다.
+> 영문판/일본판 카드 데이터 모두 더 이상 로컬 JSON을 앱이 직접 읽지 않고, 위 명령으로 도커의 Postgres에 적재해두고 조회합니다.
 > `.env.example`을 복사해 `.env`로 만들고 필요하면 `POSTGRES_*` 값을 맞춰주세요(기본값 그대로면 별도 설정 불필요).
-> (일본판은 아직 기존 방식대로 로컬 JSON을 그대로 사용합니다.)
+> 일본판 카드 데이터는 `backend/scraper/pokellector_jp_scraper.py`로 jp.pokellector.com에서 수집합니다(시크릿레어 포함, 실제 일본어 카드명·레어도 포함).
 
 서버 실행:
 ```
