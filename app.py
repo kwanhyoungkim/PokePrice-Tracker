@@ -1,9 +1,8 @@
 from flask import Flask, render_template, request, jsonify
 import os
-import json
 from dotenv import load_dotenv
 from main import PokemonPriceApp
-from backend.database.db import search_cards_en, search_cards_jp
+from backend.database.db import search_cards_en, search_cards_jp, get_pokemon_name_info
 
 load_dotenv()
 
@@ -15,28 +14,14 @@ app = Flask(
     template_folder=os.path.join(base_dir, 'frontend', 'templates')
 )
 
-# 경로 설정
-JSON_PATH = os.path.join(base_dir, 'backend', 'data', 'pokemon_names.json')
-# ⚠️ 영문판/일본판 카드 데이터는 더 이상 로컬 JSON을 통째로 메모리에 올리지 않는다.
-# docker-compose.yml 로 띄운 Postgres 컨테이너(cards_en, cards_jp 테이블)를 대신 조회한다.
-# (backend/database/load_en_cards.py, load_jp_cards.py 로 최초 1회 적재 필요, README 참고)
+# ⚠️ 카드 데이터(영문/일본판)와 포켓몬 다국어 이름 매핑 모두 더 이상 로컬 JSON을
+# 통째로 메모리에 올리지 않는다. docker-compose.yml 로 띄운 Postgres 컨테이너
+# (cards_en, cards_jp, pokemon_names 테이블)를 대신 조회한다.
+# (backend/database/load_en_cards.py, load_jp_cards.py, load_pokemon_names.py 로
+#  최초 1회 적재 필요, README 참고)
 
 # DB 및 스크래퍼 로직 인스턴스
 price_app = PokemonPriceApp()
-
-def load_json_file(file_path):
-    if not os.path.exists(file_path):
-        print(f"⚠️  경고: {file_path} 없음")
-        return []
-    try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except Exception as e:
-        print(f"❌ 로드 에러: {e}")
-        return []
-
-# 데이터 사전 로드 (검색 속도 향상)
-POKEMON_MASTER_MAP = {item['korean_name']: item for item in load_json_file(JSON_PATH)}
 
 @app.route('/')
 def index():
@@ -53,8 +38,12 @@ def search_cards():
     if not name_input:
         return jsonify([])
 
-    # 1. 이름 정보 확보
-    name_info = POKEMON_MASTER_MAP.get(name_input)
+    # 1. 이름 정보 확보 (Postgres pokemon_names 테이블 조회)
+    try:
+        name_info = get_pokemon_name_info(name_input)
+    except Exception as e:
+        print(f"❌ Postgres 조회 오류 (pokemon_names): {e}")
+        name_info = None
     eng_name = name_info.get('english_name', '').lower() if name_info else name_input.lower()
     jp_name = name_info.get('japanese_name', '') if name_info else ""
 

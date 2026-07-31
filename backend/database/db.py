@@ -85,6 +85,17 @@ CREATE TABLE IF NOT EXISTS series_jp (
 # (예전에는 pokemon_series_jp_info.json 을 썼는데, 그 파일의 series_code 는 시대마다
 #  1번부터 다시 매겨지는 값이라 신뢰할 수 없어서 jp.pokellector.com 기준으로 교체했다)
 
+POKEMON_NAMES_SCHEMA = """
+CREATE TABLE IF NOT EXISTS pokemon_names (
+    korean_name TEXT PRIMARY KEY,
+    number TEXT,
+    english_name TEXT,
+    japanese_name TEXT
+);
+"""
+# app.py가 한글 입력(korean_name)으로 영문/일본어 이름을 찾는 용도로만 쓰기 때문에
+# korean_name 을 PK로 둔다(backend/data/pokemon_names.json 기준 1025건, 중복 없음 확인).
+
 
 def ensure_schema(conn):
     with conn.cursor() as cur:
@@ -92,6 +103,7 @@ def ensure_schema(conn):
         cur.execute(CARDS_JP_SCHEMA)
         cur.execute(SERIES_US_SCHEMA)
         cur.execute(SERIES_JP_SCHEMA)
+        cur.execute(POKEMON_NAMES_SCHEMA)
     conn.commit()
 
 
@@ -186,3 +198,38 @@ def search_cards_jp(name_query: str, jp_name_query: str = "", limit: int = 200):
         }
         for row in rows
     ]
+
+
+def get_pokemon_name_info(korean_name: str):
+    """한글 이름(korean_name)으로 포켓몬 다국어 이름 매핑을 조회한다.
+
+    반환 형식은 기존 app.py가 pokemon_names.json으로 만들던
+    POKEMON_MASTER_MAP[name] 딕셔너리와 동일하게 맞춘다. 없으면 None.
+    """
+    if not korean_name:
+        return None
+
+    conn = get_connection()
+    try:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            cur.execute(
+                """
+                SELECT korean_name, number, english_name, japanese_name
+                FROM pokemon_names
+                WHERE korean_name = %s
+                """,
+                (korean_name,),
+            )
+            row = cur.fetchone()
+    finally:
+        conn.close()
+
+    if not row:
+        return None
+
+    return {
+        "number": row["number"],
+        "korean_name": row["korean_name"],
+        "english_name": row["english_name"],
+        "japanese_name": row["japanese_name"],
+    }
