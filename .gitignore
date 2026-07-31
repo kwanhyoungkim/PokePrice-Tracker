@@ -27,3 +27,7 @@ backend/data/all_cards_jp.failed.json
 # (backend/database/load_series_data.py 적재용 임시 파일로만 사용, git에는 안 올림)
 backend/data/pokemon_series_us_info.json
 backend/data/pokemon_series_jp_info.json
+
+# 포켓몬 다국어 이름 매핑도 Postgres(pokemon_names 테이블)로 이전했다.
+# (backend/database/load_pokemon_names.py 적재용 임시 파일로만 사용, git에는 안 올림)
+backend/data/pokemon_names.json
